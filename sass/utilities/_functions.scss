@@ -1,3 +1,9 @@
+// Импортирует шрифты с Гугла, если такая переменная существует
 @if variable-exists(font-url--google) {
   @import url($font-url--google);
+}
+
+// Конвертирует px в em
+@function em($target, $context: $font-size-base) {
+	@return ( $target / $context ) * 1em;
 }
