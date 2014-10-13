@@ -4,8 +4,7 @@
 
 // Font Stacks
 
-$font-url--google        : 'http://fonts.googleapis.com/css?family=Gudea|Raleway:400,100';
-$font-family--secondary  : 'Raleway Thin', Helvetica, Arial, sans-serif;
+$font-family--secondary  : 'Raleway', Helvetica, Arial, sans-serif;
 $font-family-sans-serif  : 'Gudea', Helvetica, Arial, sans-serif;
 
 
@@ -16,28 +15,33 @@ $font-weight--thin       : 100;
 
 // Color Usage
 
-$color-primary   : #999;
-$color-secondary : #666;
-$color-accent    : #996;
+$brand-primary           : #999;
+$color-secondary         : #666;
+$color-third             : #333;
+$color-accent            : #996;
 
-// Bootstrap variables
 
+//                            Bootstrap variables
 
-//Шрифт
-$btn-default-color      : $color-primary;
-$text-color             : $color-primary;
+//Fonts
+
+$btn-default-color      : $brand-primary;
+$text-color             : $brand-primary;
 $font-size-base         : 14px;
 
-// Расстояние между колонками
-$grid-gutter-width      : 10px;
+// ==========================================================================
 
-// Ширина контэйнера на десктопе
-$container-large-desktop: 940px + 80px;
+$grid-gutter-width      : 0;
 
+// ==========================================================================
 
-$screen-size            : 200px;
-$screen-xs: $screen-size;
-$screen-xs-min: $screen-size;
-$screen-sm: $screen-size;
-$screen-md: $screen-size;
-$screen-lg: $screen-size;
+$container-large-desktop: 72.85714285714286em;
+
+// ==========================================================================
+
+$screen-size            : 16.666666666666668em;
+$screen-xs              : $screen-size;
+$screen-xs-min          : $screen-size;
+$screen-sm              : $screen-size;
+$screen-md              : $screen-size;
+$screen-lg              : $screen-size;

@@ -1,0 +1,132 @@
+$header-blocks-indent: em(50px);
+
+.private-office,
+.currency {
+	padding-top: $header-blocks-indent;
+}
+
+.header__first-row {
+
+	padding-bottom: $header-blocks-indent;
+
+	@extend .row;
+
+}
+
+// ==========================================================================
+// modules/logo
+// ==========================================================================
+
+	.logo {
+
+
+		&__big-letters {
+			@extend %big-letter;
+		}
+
+		&__small-letters {
+			@extend %small-letters;
+		}
+
+		&__big-letters, 
+		&__small-letters {
+			@extend .text-uppercase;
+
+		}
+
+		@extend %hover;
+		@extend .col-lg-3;	
+
+	}
+
+// ==========================================================================
+// modules/office
+// ==========================================================================
+
+	.private-office {
+
+		&__menu {
+			@extend %private-office__menu;
+		}
+
+		@extend %private-office;
+		@extend .col-lg-offset-1;
+		@extend .col-lg-3;	
+
+	}
+
+// ==========================================================================
+
+	.currency {
+
+		&__active {
+
+			color: $color-accent;
+
+		}
+
+		@extend .col-lg-2;
+
+	}
+
+// ==========================================================================
+
+	.basket-wrapper {
+
+		@extend .col-lg-3;
+
+	}
+
+		.basket {
+
+			position: absolute;
+			bottom  : 0;
+			
+			
+			&__button {
+				
+				margin-right: em(10px);
+
+				@extend .pull-left;
+				@extend .btn;
+				@extend .btn-default;
+				@extend .btn-lg;
+
+			}
+
+				&__icon {
+
+					@extend .glyphicon;
+					@extend .glyphicon-shopping-cart;
+
+				}
+
+				&__link, 
+				&__number-items {
+
+					color: $color-accent;
+
+				}
+				
+				&__greeting {
+
+					@extend .text-uppercase;
+
+				}
+
+				&__link {
+
+					word-wrap: break-word;
+
+				}
+
+				&__message {
+
+					@extend .pull-left;
+					width: em(169px);
+
+				}
+
+		}
+
+
