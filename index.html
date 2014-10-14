@@ -38,7 +38,7 @@
 			<span class="currency">
 
 				Currency:
-				<a href="#" class="currency__active">&#163;</a>
+				<a href="#" class="active-color">&#163;</a>
 				<a href="#">$</a>
 				<a href="#">&#128;</a>
 
@@ -48,70 +48,86 @@
 
 				<div class="basket">
 
-					<button type="button" class="basket__button"><!-- shopping-cart btn btn-default btn-lg-->
+					<button type="button" class="basket__button">
 					
-					  <span class="basket__icon"></span> <!-- shopping-cart__icon glyphicon glyphicon-shopping-cart-->
+					  <span class="basket__button__icon"></span> 
 					
 					</button>
 					
-				<div class="basket__message">
-					<span class="basket__greeting">Welcome <a href="#" class="basket__link">yourname</a></span><br> <!-- text-transform: uppercase, если не наследуется, задать значение inherit ссылке -->
-					<a href="#" class="basket-items">
-					
-						<span class="basket__number-items">2</span>
-						<span id="basket__word-items">items</span>
-					
-					</a>
-				</div>
+					<div class="basket__message">
+
+						<span class="basket__message__greeting">
+
+							Welcome 
+							<a href="#" class="basket__link">yourname</a>
+
+						</span>
+
+						<br>
+
+						<a href="#" class="basket-items">
+						
+							<span class="basket__number-items">2</span>
+							<span id="basket__word-items">items</span>
+						
+						</a>
+						
+					</div>
 
 				</div>
 			</div>
 		</div>
 
-		<nav class="navbar navbar-default" role="navigation"><!-- //Переименовать в header_main-navigation_search -->
+		<nav class="navbar-default navbar" role="navigation">
 			<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			    <span class="sr-only">Toggle navigation</span>
-			    <span class="icon-bar"></span>
-			    <span class="icon-bar"></span>
-			    <span class="icon-bar"></span>
-			  </button>
-			</div>
-
-		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><!-- //Переименовать в main-navigation -->
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">New in <span class="caret"></span></a>
-				  <ul class="dropdown-menu" role="menu">
-				    <li><a href="#">Action</a></li>
-				    <li><a href="#">Another action</a></li>
-				    <li><a href="#">Something else here</a></li>
-				    <li class="divider"></li>
-				    <li><a href="#">Separated link</a></li>
-				    <li class="divider"></li>
-				    <li><a href="#">One more separated link</a></li>
-				  </ul>
-				</li>
-				<li><a href="#">Sale</a></li>
-				<li><a href="#">Flooring</a></li>
-				<li><a href="#">Curtains</a></li>
-				<li><a href="#">Bedding</a></li>
-				<li><a href="#">Contact us</a></li>
-			</ul>
-			<form class="navbar-form navbar-left" role="search"> <!-- search -->
-				<div class="form-group">
-				  <input type="text" class="form-control" placeholder="Search"> <!-- search__input -->
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				  </button>
 				</div>
-				<button type="submit" class="btn btn-default">
-					<span class="glyphicon glyphicon-search"></span><!-- search__button -->
-				</button>
-			</form>
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
+
+			    <div class="navbar-default navbar" id="bs-example-navbar-collapse-1">
+
+					<ul class="navigation-menu">
+
+						<li class="active"><a href="#">Home</a></li>
+						<li class="dropdown">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown">New in <span class="caret"></span></a>
+						  <ul class="dropdown-menu" role="menu">
+						    <li><a href="#">Action</a></li>
+						    <li><a href="#">Another action</a></li>
+						    <li><a href="#">Something else here</a></li>
+						    <li class="divider"></li>
+						    <li><a href="#">Separated link</a></li>
+						    <li class="divider"></li>
+						    <li><a href="#">One more separated link</a></li>
+						  </ul>
+						</li>
+						<li><a href="#">Sale</a></li>
+						<li><a href="#">Flooring</a></li>
+						<li><a href="#">Curtains</a></li>
+						<li><a href="#">Bedding</a></li>
+						<li><a href="#">Contact us</a></li>
+
+					</ul>
+
+					<form class="search-form" role="search">
+
+						<div class="form-group">
+						  <input type="text" class="search-form__input" placeholder="Search...">
+						</div>
+
+        				<button type="submit" class="search-form__button">
+        					<span class="search-form__icon"></span>
+        				</button>
+
+					</form>
+			    </div>
+			</div>
 		</nav>
 	</header>
 	<div class="content">

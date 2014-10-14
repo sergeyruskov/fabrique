@@ -18,24 +18,46 @@ $font-weight--thin       : 100;
 $brand-primary           : #999;
 $color-secondary         : #666;
 $color-third             : #333;
-$color-accent            : #996;
+$color-accent            : #ad9;
 
 
 //                            Bootstrap variables
 
-//Fonts
+// Fonts
 
 $btn-default-color      : $brand-primary;
 $text-color             : $brand-primary;
 $font-size-base         : 14px;
 
+// Navbar
+
+$navbar-default-bg                  : transparent;
+$navbar-default-link-active-color   : $color-accent;
+$navbar-default-link-color          : $brand-primary;
+
+// Forms
+
+$input-bg                : rgba(180, 152, 144, 0.2);
+$input-border-radius     : 0;
+$input-color-placeholder : $brand-primary;
+$input-height-base       : 25px;
+$input-border-focus      : #bbb;
+
 // ==========================================================================
 
-$grid-gutter-width      : 0;
+$navbar-margin-bottom    : 0;
 
 // ==========================================================================
 
-$container-large-desktop: 72.85714285714286em;
+$grid-gutter-width       : 0;
+
+// ==========================================================================
+
+$container-large-desktop : 72.85714285714286em;
+
+// ==========================================================================
+// Padding in header
+$header-blocks-indent    : 3.5714285714285716em;
 
 // ==========================================================================
 

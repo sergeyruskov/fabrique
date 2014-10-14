@@ -1,35 +1,41 @@
-$header-blocks-indent: em(50px);
-
 .private-office,
 .currency {
+
 	padding-top: $header-blocks-indent;
+
 }
 
 .header__first-row {
 
 	padding-bottom: $header-blocks-indent;
 
-	@extend .row;
+	@extend       .row;
 
 }
 
 // ==========================================================================
-// modules/logo
+// Logo
 // ==========================================================================
 
 	.logo {
 
 
 		&__big-letters {
-			@extend %big-letter;
+
+			font  : em(45px) $font-family--secondary;
+			color : $color-third;
+
 		}
 
 		&__small-letters {
-			@extend %small-letters;
+
+			font-size     : em(25px);
+
 		}
 
 		&__big-letters, 
 		&__small-letters {
+
 			@extend .text-uppercase;
 
 		}
@@ -40,47 +46,53 @@ $header-blocks-indent: em(50px);
 	}
 
 // ==========================================================================
-// modules/office
+// Private office
 // ==========================================================================
 
 	.private-office {
 
+		overflow: hidden;
+
 		&__menu {
-			@extend %private-office__menu;
+
+			border-left  : 1px solid $color-secondary;
+
+			margin-left  : -1px;
+			padding      : 0 5px; 
+
 		}
 
-		@extend %private-office;
 		@extend .col-lg-offset-1;
 		@extend .col-lg-3;	
 
 	}
 
 // ==========================================================================
-
+// Currency
+// ==========================================================================
 	.currency {
-
-		&__active {
-
-			color: $color-accent;
-
-		}
 
 		@extend .col-lg-2;
 
 	}
 
 // ==========================================================================
+// Basket
+// ==========================================================================
 
 	.basket-wrapper {
 
+		height: em(72px);
+
 		@extend .col-lg-3;
+		//JS in da house
 
 	}
 
 		.basket {
 
 			position: absolute;
-			bottom  : 0;
+			bottom: 0;
 			
 			
 			&__button {
@@ -90,43 +102,42 @@ $header-blocks-indent: em(50px);
 				@extend .pull-left;
 				@extend .btn;
 				@extend .btn-default;
-				@extend .btn-lg;
 
 			}
 
-				&__icon {
+				&__button__icon {
 
 					@extend .glyphicon;
 					@extend .glyphicon-shopping-cart;
 
 				}
 
-				&__link, 
-				&__number-items {
-
-					color: $color-accent;
-
-				}
+			&__message {
 				
-				&__greeting {
+				width   : em(169px);
+				margin-top: em(-3px);
 
+				@extend .pull-left;
+
+			}
+
+				&__message__greeting {
+					
 					@extend .text-uppercase;
 
 				}
 
-				&__link {
+					&__link {
 
-					word-wrap: break-word;
+						word-wrap : break-word;
+						@extend   .active-color;
+
+					}
+
+				&__number-items {
+
+					@extend .active-color;
+					//JS in da house
 
 				}
-
-				&__message {
-
-					@extend .pull-left;
-					width: em(169px);
-
-				}
-
 		}
-
-
