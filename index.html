@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js"> 
+<html class="no-js" ng-app="app"> 
 <head>
 
     <meta charset="utf-8">
@@ -12,10 +12,9 @@
 	<link href="css/fabrique.css" rel="stylesheet">
 
 	<script src="js/plugins/html5shiv.min.js" type="text/javascript"></script>
-
 </head>
 
-<body>
+<body ng-controller="fabriqueController as con">
 	<header class="header">
 
 		<div class="header__first-row">
@@ -35,10 +34,11 @@
 				<a href="#" class="private-office__menu">FAQ</a>
 
 			</nav>
+
 			<span class="currency">
 
 				Currency:
-				<a href="#" class="active-color">&#163;</a>
+				<a href="#" class="activeColor">&#163;</a>
 				<a href="#">$</a>
 				<a href="#">&#128;</a>
 
@@ -48,9 +48,9 @@
 
 				<div class="basket">
 
-					<button type="button" class="basket__button">
+					<button type="button" class="basket__button" ng-class='{activeBorder : counter !== 0}'>
 					
-					  <span class="basket__button__icon"></span> 
+					  <span class="basket__button__icon" ng-class='{activeColor : counter !== 0}'></span> 
 					
 					</button>
 					
@@ -59,16 +59,16 @@
 						<span class="basket__message__greeting">
 
 							Welcome 
-							<a href="#" class="basket__link">yourname</a>
+							<a href="#" class="basket__link">{{con.basketUserName.name}}</a>
 
 						</span>
 
 						<br>
 
 						<a href="#" class="basket-items">
-						
-							<span class="basket__number-items">2</span>
-							<span id="basket__word-items">items</span>
+<!-- ============================================================================================================						 -->
+							<span class="basket__number-items">{{counter}}</span>
+							<span id="basket__word-items">item<span ng-show='counter'>s</span></span>
 						
 						</a>
 						
@@ -121,7 +121,7 @@
 						  <input type="text" class="search-form__input" placeholder="Search...">
 						</div>
 
-        				<button type="submit" class="search-form__button">
+        				<button type="submit" class="search-form__button" ng-click="counter = counter + 1" ng-init="counter=0">
         					<span class="search-form__icon"></span>
         				</button>
 
@@ -393,8 +393,11 @@ Claire Aitch</p>
 		<a href="#"></a>
 	</div>
 
-	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+
 	<script src="js/script.js" type="text/javascript"></script>
+	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<!-- <script src="js/plugins/bootstrap.js" type="text/javascript"></script> -->
 </body>
 </html>

@@ -42,7 +42,12 @@
 		right     : em(5px);
 
 		background: linear-gradient(#fff, rgba(180, 152, 144, 0.2));
+		
+		&:focus {
 
+			outline: none;
+
+		}
 
 		>.search-form__icon {
 	

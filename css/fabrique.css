@@ -5108,8 +5108,12 @@ h4 {
   text-decoration: none;
 }
 
-.active-color, .basket__link, .basket__number-items {
+.activeColor, .basket__link, .basket__number-items {
   color: #ad9;
+}
+
+.activeBorder {
+  border-color: #ad9;
 }
 
 .my-icons-sprite, .my-icons-Discover, .my-icons-FaceBook, .my-icons-Mastercard, .my-icons-Twitter, .my-icons-news, .my-icons-offer20, .my-icons-paypal, .my-icons-visa {
@@ -5210,6 +5214,9 @@ h4 {
   top: 0.1428571429em;
   right: 0.3571428571em;
   background: linear-gradient(#ffffff, rgba(180, 152, 144, 0.2));
+}
+.search-form__button:focus {
+  outline: none;
 }
 .search-form__button > .search-form__icon {
   transform: scaleX(-1);

@@ -130,13 +130,13 @@
 					&__link {
 
 						word-wrap : break-word;
-						@extend   .active-color;
+						@extend   .activeColor;
 
 					}
 
 				&__number-items {
 
-					@extend .active-color;
+					@extend .activeColor;
 					//JS in da house
 
 				}

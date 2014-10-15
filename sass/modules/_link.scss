@@ -4,6 +4,10 @@
 	}
 }
 
-.active-color {
+.activeColor {
 	color: $color-accent;
+}
+
+.activeBorder {
+	border-color: $color-accent;
 }
