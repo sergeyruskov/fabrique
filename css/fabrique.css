@@ -5083,6 +5083,10 @@ a.thumbnail.active {
     display: none !important;
   }
 }
+.nav, .navigation-menu, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
 body {
   background: url('../images/bg.jpg?1412796770');
 }
@@ -5104,16 +5108,22 @@ h4 {
   color: #ad9;
 }
 
+li.open > a {
+  color: #999 !important;
+  background-color: rgba(200, 200, 200, 0.5) !important;
+  border-radius: 6px;
+}
+
 .logo:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-.activeColor, .basket__link, .basket__number-items {
-  color: #ad9;
+.active-link, .private-office__menu:hover, .basket__link, .basket__number-items {
+  color: #ad9 !important;
 }
 
-.activeBorder {
-  border-color: #ad9;
+.active-border {
+  border-color: #ad9 !important;
 }
 
 .my-icons-sprite, .my-icons-Discover, .my-icons-FaceBook, .my-icons-Mastercard, .my-icons-Twitter, .my-icons-news, .my-icons-offer20, .my-icons-paypal, .my-icons-visa {
@@ -5220,6 +5230,17 @@ h4 {
 }
 .search-form__button > .search-form__icon {
   transform: scaleX(-1);
+}
+
+.img-responsive.ng-scope {
+  height: 26.3571428571em !important;
+  width: 50.0714285714em !important;
+  margin: 0 !important;
+}
+
+.carousel-inner {
+  float: left;
+  width: auto;
 }
 
 /*# sourceMappingURL=fabrique.css.map */

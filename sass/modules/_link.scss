@@ -1,13 +1,13 @@
 %hover {
 	&:hover {
-		text-decoration: none;
+		text-decoration: none !important;
 	}
 }
 
-.activeColor {
-	color: $color-accent;
+.active-link {
+	color: $color-accent !important;
 }
 
-.activeBorder {
-	border-color: $color-accent;
+.active-border {
+	border-color: $color-accent !important;
 }

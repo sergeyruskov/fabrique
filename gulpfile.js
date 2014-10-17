@@ -30,7 +30,7 @@ gulp.task('watch', function () {
     gulp.watch('sass/**/**/*.scss', ['compass']);
     gulp.watch('css/fabrique.css').on('change', livereload.changed);
     gulp.watch('index.html').on('change', livereload.changed);
-    gulp.watch('js/**/**/*.js').on('change', livereload.changed);
+    gulp.watch('js/**/**/**/*.js').on('change', livereload.changed);
 });
 
 

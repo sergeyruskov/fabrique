@@ -58,7 +58,11 @@
 			border-left  : 1px solid $color-secondary;
 
 			margin-left  : -1px;
-			padding      : 0 5px; 
+			padding      : 0 5px;
+
+			&:hover {
+				@extend .active-link;
+			}
 
 		}
 
@@ -130,13 +134,13 @@
 					&__link {
 
 						word-wrap : break-word;
-						@extend   .activeColor;
+						@extend   .active-link;
 
 					}
 
 				&__number-items {
 
-					@extend .activeColor;
+					@extend .active-link;
 					//JS in da house
 
 				}
