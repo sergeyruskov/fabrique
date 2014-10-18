@@ -1,0 +1,69 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Font Stacks
+
+$font-family--secondary  : 'Raleway', Helvetica, Arial, sans-serif;
+$font-family-sans-serif  : 'Gudea', Helvetica, Arial, sans-serif;
+
+
+// Font Weights
+
+$font-weight--thin       : 100;
+
+
+// Color Usage
+
+$brand-primary           : #999;
+$color-secondary         : #666;
+$color-third             : #333;
+$color-accent            : #ad9;
+
+
+//                            Bootstrap variables
+
+// Fonts
+
+$btn-default-color      : $brand-primary;
+$text-color             : $brand-primary;
+$font-size-base         : 14px;
+
+// Navbar
+
+$navbar-default-bg                  : transparent;
+$navbar-default-link-active-color   : $color-accent;
+$navbar-default-link-color          : $brand-primary;
+
+// Forms
+
+$input-bg                : rgba(180, 152, 144, 0.2);
+$input-border-radius     : 0;
+$input-color-placeholder : $brand-primary;
+$input-height-base       : 25px;
+$input-border-focus      : #bbb;
+
+// ==========================================================================
+
+$navbar-margin-bottom    : 0;
+
+// ==========================================================================
+
+$grid-gutter-width       : 0;
+
+// ==========================================================================
+
+$container-large-desktop : 72.85714285714286em;
+
+// ==========================================================================
+// Padding in header
+$header-blocks-indent    : 3.5714285714285716em;
+
+// ==========================================================================
+
+$screen-size            : 16.666666666666668em;
+$screen-xs              : $screen-size;
+$screen-xs-min          : $screen-size;
+$screen-sm              : $screen-size;
+$screen-md              : $screen-size;
+$screen-lg              : $screen-size;

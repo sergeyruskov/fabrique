@@ -1,0 +1,36 @@
+.my-icons-sprite, .my-icons-Discover, .my-icons-FaceBook, .my-icons-Mastercard, .my-icons-Twitter, .my-icons-news, .my-icons-offer20, .my-icons-paypal, .my-icons-visa {
+  background-image: url('../images/sprite.png');
+  background-repeat: no-repeat;
+}
+
+.my-icons-Discover {
+  background-position: 0 0;
+}
+
+.my-icons-FaceBook {
+  background-position: 0 -48px;
+}
+
+.my-icons-Mastercard {
+  background-position: 0 -80px;
+}
+
+.my-icons-Twitter {
+  background-position: 0 -128px;
+}
+
+.my-icons-news {
+  background-position: 0 -160px;
+}
+
+.my-icons-offer20 {
+  background-position: 0 -208px;
+}
+
+.my-icons-paypal {
+  background-position: 0 -240px;
+}
+
+.my-icons-visa {
+  background-position: 0 -271px;
+}

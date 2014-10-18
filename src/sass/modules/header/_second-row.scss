@@ -1,0 +1,76 @@
+// ==========================================================================
+// Main navigation menu
+// ==========================================================================
+
+.navigation-menu {
+
+	& > li > a {
+
+		font-size: em(18px);
+
+		@extend  .text-uppercase;
+
+	}
+
+	@extend .nav;
+	@extend .navbar-nav;
+
+}
+
+
+li.open>a {
+	@extend %dropdown;
+}
+
+// ==========================================================================
+// Search in main navigation menu
+// ==========================================================================
+
+.search-form {
+
+	position: relative;
+
+	& &__input {
+
+		padding-right: em(30px);
+		width        : em(220px);
+
+		@extend      .form-control;
+
+	}
+
+	&__button {
+
+		position  : absolute;
+
+		top       : em(2px);
+		right     : em(5px);
+
+		background: linear-gradient(#fff, rgba(180, 152, 144, 0.2));
+		
+		&:focus {
+
+			outline: none;
+
+		}
+
+		>.search-form__icon {
+	
+			transform    : scaleX(-1);
+		 
+			@extend      .glyphicon;
+			@extend      .glyphicon-search;
+	
+		}
+
+		@extend .btn-xs;
+		@extend .btn;
+		@extend .btn-default;
+
+	}
+
+	@extend          .navbar-form;
+	@extend          .pull-right;
+
+}
+	
