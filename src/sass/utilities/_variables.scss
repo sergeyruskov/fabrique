@@ -4,13 +4,14 @@
 
 // Font Stacks
 
-$font-family--secondary  : 'Raleway', Helvetica, Arial, sans-serif;
 $font-family-sans-serif  : 'Gudea', Helvetica, Arial, sans-serif;
+$font-family--secondary  : 'Raleway', Helvetica, Arial, sans-serif;
 
 
 // Font Weights
 
 $font-weight--thin       : 100;
+$font-weight--bold       : 700;
 
 
 // Color Usage
@@ -19,6 +20,9 @@ $brand-primary           : #999;
 $color-secondary         : #666;
 $color-third             : #333;
 $color-accent            : #ad9;
+
+$white                   : #fff;
+$black                   : #000;
 
 
 //                            Bootstrap variables

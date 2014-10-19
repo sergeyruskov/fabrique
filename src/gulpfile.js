@@ -8,6 +8,7 @@ var compass = require('gulp-compass'),
 	gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     distPath = '../dist/',
+    rename = require('gulp-rename'),
     wordEnd = ".min";
 
 

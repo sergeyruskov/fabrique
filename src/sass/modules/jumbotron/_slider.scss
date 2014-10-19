@@ -1,0 +1,54 @@
+.slider__content-block {
+
+	top       : 0;
+	left      : 0;
+
+	padding   : em(20px) 0 0 em(40px); 
+
+	@extend   .carousel-caption;
+
+}
+
+	.slider__content-block__header {
+
+		text-transform: uppercase;
+		color         : $white;
+
+		width         : em(240px, 24px);
+
+		line-height   : 3.1;
+		
+	}
+
+	.slider__content-block__paragraph {
+
+		width       : em(185px);
+
+	}
+	
+	.slider__content-block__preview {
+
+		width           : em(75px);
+
+		font-size       : em(15px);
+		font-family     : $font-family--secondary;
+		color           : $black;
+		font-weight     : $font-weight--bold;
+
+		border-radius   : 0;
+		background-image: inline-image('../base64/slider/preview_bg.jpg');
+
+		@extend .btn;
+		@extend .btn-default;
+		@extend .show;
+
+	}
+
+	//AngularJS
+	.ng-binding {
+
+		text-align  : left !important;
+
+	}
+
+

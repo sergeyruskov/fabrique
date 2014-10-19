@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Fabrique Fine Furnishings: Home</title>
-    <meta name="Fabrique" content="Pastel linen">
+    <meta name="keywords" content="Pastel linen">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
@@ -13,7 +13,9 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
 </head>
-<body ng-app="app" ng-controller="basketCtrl as basket">
+
+<body data-ng-app="app" data-ng-controller="basketCtrl as basket">
+
 	<header class="header">
 
 		<div class="header__first-row">
@@ -34,21 +36,21 @@
 
 			</nav>
 
-			<span class="currency" ng-controller="activeCurrencyCtrl as active">
+			<span class="currency" data-ng-controller="activeCurrencyCtrl as active">
 
 				Currency:
-				<a href="#" ng-click="active.setTrigger(1)" ng-class="{'active-link':active.activeClass(1)}">&#163;</a>
-				<a href="#" ng-click="active.setTrigger(2)" ng-class="{'active-link':active.activeClass(2)}">$</a>
-				<a href="#" ng-click="active.setTrigger(3)" ng-class="{'active-link':active.activeClass(3)}">&#128;</a>
+				<a class="active-currency" data-ng-click="active.setTrigger(1)" data-ng-class="{'active-link':active.activeClass(1)}">&#163;</a>
+				<a class="active-currency" data-ng-click="active.setTrigger(2)" data-ng-class="{'active-link':active.activeClass(2)}">$</a>
+				<a class="active-currency" data-ng-click="active.setTrigger(3)" data-ng-class="{'active-link':active.activeClass(3)}">&#128;</a>
 
 			</span>
 
 			<div class="basket-wrapper">
 
 				<div class="basket">
-					<button type="button" class="basket__button" ng-class="{'active-border':basket.borderColor}">
+					<button type="button" class="basket__button" data-ng-class="{'active-border':basket.borderColor}">
 
-					  <span class="basket__button__icon" ng-class="{'active-link':basket.linkColor}"></span> 
+					  <span class="basket__button__icon" data-ng-class="{'active-link':basket.linkColor}"></span> 
 					
 					</button>
 					
@@ -62,14 +64,12 @@
 
 						<br>
 
-						<a href="#" class="basket-items">
+						<div class="basket-items">
 
 							<span class="basket__number-items"></span>
-							<span id="basket__word-items">
-								<a href="#" class="active-link">{{basket.numberOfItems}}</a> {{basket.itemString}}
-							</span>
+							<a href="#" class="active-link">{{basket.numberOfItems}}</a><span>{{" " + basket.itemString}}</span>
 						
-						</a>
+						</div>
 						
 					</div>
 
@@ -91,12 +91,12 @@
 
 			    <div class="navbar-default navbar" id="bs-example-navbar-collapse-1">
 
-					<ul class="navigation-menu" ng-controller="activeMainMenuCtrl as activeMainMenu">
+					<ul class="navigation-menu" data-ng-controller="activeMainMenuCtrl as activeMainMenu">
 
-						<li><a href="#" ng-click="activeMainMenu.setTrigger(1)" ng-class="{'active-link':activeMainMenu.activeClass(1)}">Home</a></li>
+						<li><a href="#" data-ng-click="activeMainMenu.setTrigger(1)" data-ng-class="{'active-link':activeMainMenu.activeClass(1)}">Home</a></li>
 					    <!-- Simple dropdown -->
-					    <li dropdown is-open="status.isopen">
-					      <a class="dropdown-toggle" ng-disabled="disabled">
+					    <li class="dropdown" data-is-open="status.isopen">
+					      <a class="dropdown-toggle" data-ng-disabled="disabled">
 					        New in <span class="caret"></span>
 					      </a>
 					      <ul class="dropdown-menu" role="menu">
@@ -107,11 +107,11 @@
 					        <li><a href="#">Separated link</a></li>
 					      </ul>
 						</li>
-						<li><a href="#" ng-click="activeMainMenu.setTrigger(3)" ng-class="{'active-link':activeMainMenu.activeClass(3)}">Sale</a></li>
-						<li><a href="#" ng-click="activeMainMenu.setTrigger(4)" ng-class="{'active-link':activeMainMenu.activeClass(4)}">Flooring</a></li>
-						<li><a href="#" ng-click="activeMainMenu.setTrigger(5)" ng-class="{'active-link':activeMainMenu.activeClass(5)}">Curtains</a></li>
-						<li><a href="#" ng-click="activeMainMenu.setTrigger(6)" ng-class="{'active-link':activeMainMenu.activeClass(6)}">Bedding</a></li>
-						<li><a href="#" ng-click="activeMainMenu.setTrigger(7)" ng-class="{'active-link':activeMainMenu.activeClass(7)}">Contact us</a></li>
+						<li><a href="#" data-ng-click="activeMainMenu.setTrigger(3)" data-ng-class="{'active-link':activeMainMenu.activeClass(3)}">Sale</a></li>
+						<li><a href="#" data-ng-click="activeMainMenu.setTrigger(4)" data-ng-class="{'active-link':activeMainMenu.activeClass(4)}">Flooring</a></li>
+						<li><a href="#" data-ng-click="activeMainMenu.setTrigger(5)" data-ng-class="{'active-link':activeMainMenu.activeClass(5)}">Curtains</a></li>
+						<li><a href="#" data-ng-click="activeMainMenu.setTrigger(6)" data-ng-class="{'active-link':activeMainMenu.activeClass(6)}">Bedding</a></li>
+						<li><a href="#" data-ng-click="activeMainMenu.setTrigger(7)" data-ng-class="{'active-link':activeMainMenu.activeClass(7)}">Contact us</a></li>
 
 					</ul>
 
@@ -124,179 +124,176 @@
         				<button type="submit" class="search-form__button">
         					<span class="search-form__icon"></span>
         				</button>
+					</form>						
 
-					</form>
 			    </div>
 			</div>
 		</nav>
 	</header>
-	<div class="container">
+	<div class="content">
 		<div class="row">
-
+	
 			<div class="col-sm-9 col-md-9">
-				<div ng-controller="carouselCtrl as carousel">
-				  <div>
+				<div data-ng-controller="carouselCtrl as carousel">
 				    <carousel interval="myInterval">
-				      <slide ng-repeat="slide in carousel.slides" active="slide.active">
-				        <img ng-src="{{slide.image}}" style="margin:auto;" class="img-responsive" height="369" width="701">
-				        <div class="carousel-caption">
-				          <h1>{{slide.header}}</h1>
-				          <p>{{slide.paragraph}}</p>
+				      <slide data-ng-repeat="slide in carousel.slides" active="slide.active">
+				        <img alt="{{slide.alt}}" data-ng-src="{{slide.image}}" class="img-responsive" height="370" width="700">
+				        <div class="slider__content-block">
+				          <h1 class="slider__content-block__header">{{slide.header}}</h1>
+				          <p class="slider__content-block__paragraph" data-ng-bind-html='slide.paragraph'></p>
+				          <a href="#" class="slider__content-block__preview">Preview</a>
 				        </div>
 				      </slide>
 				    </carousel>
-				  </div>
 				</div>
 			</div>
 		
-			<div class="col-sm-3 col-md-3">
-				<div class="info-block">
-					<a href="#" class="discount"></a> <!-- сделать background через base64 -->
-					<div class="info-block__news"><!-- тут надо подумать как расположить картинку, можно в новый див поставить спрайт -->
-						<p>Subscribe to our free monthly newsletter and be the first to hear about our offers.</p>
-					</div>
-					<form class="navbar-form navbar-left" role="search"> <!-- search-2info-block -->
-						<div class="form-group">
-						  <input type="text" class="form-control" placeholder="Email..."> <!-- search__input-(2)info-block -->
-						</div>
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-chevron-right"></span><!-- search__button-info-block -->
-						</button>
-					</form>
-				</div>
-			</div>
+			<aside class="sale">
 
+				<a href="#" class="sale__discount"></a>
+				<!-- тут надо подумать как расположить картинку, можно в новый див поставить спрайт -->
+				<p class="sale__message">Subscribe to our free monthly newsletter and be the first to hear about our offers.</p>
+				<form class="email-form" role="search">
+					<div class="form-group">
+					  <input type="text" class="email-form__input" placeholder="Email...">
+					</div>
+					<button type="submit" class="email-form__submit-button">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</button>
+				</form>
+
+			</aside>
+		
+		
+		
+		<div class="row">
+			<h3 class="important-info">New products</h3>
+		  <div class="col-sm-3 col-md-3">
+		    <div class="thumbnail">
+		      <img src="images/new-products/img1.jpg" height="130" width="241" alt="Clare Aitch Bath Sheets">
+		      <div class="caption">
+		        <h4>Claire aitch bath sheets <span class="pull-right">&#163;29.99</span></h4>
+		        <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer
+		Claire Aitch</p>
+		        <p>
+			        <a href="#" class="btn btn-primary" role="button">View</a> 
+			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		  
+		  <div class="col-sm-3 col-md-3">
+		    <div class="thumbnail">
+		      <img src="images/new-products/img2.jpg" height="130" width="241" alt="Chocolate Cushion Set">
+		      <div class="caption">
+		        <h4>Chocolate cushion set <span class="pull-right">&#163;36.99</span></h4>
+		        <p>Who can resist the temptation and comfort of this trilogy of chocolate coloured cushions? Deep filled for ultimate comfort and so frilly!</p>
+		        <p>
+			        <a href="#" class="btn btn-primary" role="button">View</a> 
+			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		  
+		  <div class="col-sm-3 col-md-3">
+		    <div class="thumbnail">
+		      <img src="images/new-products/img3.jpg" height="130" width="241" alt="Kay Lea Modern Bed Set">
+		      <div class="caption">
+		        <h4>Kay lea modern bed set <span class="pull-right">&#163;59.99</span></h4>
+		        <p>For fans of minimalism we have the classic black and white bed set by new designer Kay Lea. 
+		2 pillow cases, quilt cover and sheet.</p>
+		        <p>
+			        <a href="#" class="btn btn-primary" role="button">View</a> 
+			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		  	  
+		  <div class="col-sm-3 col-md-3">
+		    <div class="thumbnail">
+		      <img src="images/new-products/img4.jpg" height="130" width="241" alt="Ali Baba &amp; Rug Cushion ">
+		      <div class="caption">
+		        <h4>Ali Baba Rug &amp; Cushion  <span class="pull-right">&#163;259.99</span></h4>
+		        <p>A  taste of the exotic with this hand made Turkish rug and matching cushion in stain resistant, softened 100% cotton.</p>
+		        <p>
+			        <a href="#" class="btn btn-primary" role="button">View</a> 
+			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		  
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div class="row">
+			<h3 class="important-info">Featured products</h3>
+		  <div class="col-sm-3 col-md-3">
+		    <div class="thumbnail">
+		      <img src="images/featured-products/img1.jpg" height="130" width="241" alt="Royale Curtains">
+		      <div class="caption">
+		        <h4>Royale curtains <span class="pull-right">&#163;159.99</span></h4>
+		        <p>A range of colours compliment what have to be the thickest curtains we have ever seen. As soft as velvet and available in a range of sizes.</p>
+		        <p>
+			        <a href="#" class="btn btn-primary" role="button">View</a> 
+			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		  
+		  <div class="col-sm-3 col-md-3">
+		    <div class="thumbnail">
+		      <img src="images/featured-products/img2.jpg" height="130" width="241" alt="Claire Aitch Zebra Rug ">
+		      <div class="caption">
+		        <h4>Claire Aitch Zebra Rug  <span class="pull-right">&#163;129.99</span></h4>
+		        <p>Contemporary, 3 inch deep sheeps wool rug by designer Claire Aitch. Hessian backed for extra long life and stain resistant.</p>
+		        <p>
+			        <a href="#" class="btn btn-primary" role="button">View</a> 
+			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		  	  
+		  <div class="col-sm-3 col-md-3">
+		    <div class="thumbnail">
+		      <img src="images/featured-products/img3.jpg" height="130" width="241" alt="Real Pine Wood Flooring">
+		      <div class="caption">
+		        <h4>Real pine wood flooring <span class="pull-right">&#163;19.99</span></h4>
+		        <p>Save 50% on this real English Pine wood flooring while stocks last. Was £39.98 now £19.99 per square metre. </p>
+		        <p>
+			        <a href="#" class="btn btn-primary" role="button">View</a> 
+			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		  	  
+		  <div class="col-sm-3 col-md-3">
+		    <div class="thumbnail">
+		      <img src="images/featured-products/img4.jpg" height="130" width="241" alt="Modern Flowers Bed Set">
+		      <div class="caption">
+		        <h4>Modern flowers bed set <span class="pull-right">&#163;89.99</span></h4>
+		        <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer Claire Aitch.</p>
+		        <p>
+			        <a href="#" class="btn btn-primary" role="button">View</a> 
+			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+		        </p>
+		      </div>
+		    </div>
+		  </div>
+		
 		</div>
 	</div>
-
-
-
-	<div class="row">
-		<h3 class="important-info">New products</h3>
-	  <div class="col-sm-3 col-md-3">
-	    <div class="thumbnail">
-	      <img src="images/new-products/img1.jpg" height="130" width="241" alt="Clare Aitch Bath Sheets">
-	      <div class="caption">
-	        <h4>Claire aitch bath sheets <span class="pull-right">&#163;29.99</span></h4>
-	        <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer
-Claire Aitch</p>
-	        <p>
-		        <a href="#" class="btn btn-primary" role="button">View</a> 
-		        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-	        </p>
-	      </div>
-	    </div>
-	  </div>
-	  
-	  <div class="col-sm-3 col-md-3">
-	    <div class="thumbnail">
-	      <img src="images/new-products/img2.jpg" height="130" width="241" alt="Chocolate Cushion Set">
-	      <div class="caption">
-	        <h4>Chocolate cushion set <span class="pull-right">&#163;36.99</span></h4>
-	        <p>Who can resist the temptation and comfort of this trilogy of chocolate coloured cushions? Deep filled for ultimate comfort and so frilly!</p>
-	        <p>
-		        <a href="#" class="btn btn-primary" role="button">View</a> 
-		        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-	        </p>
-	      </div>
-	    </div>
-	  </div>
-	  
-	  <div class="col-sm-3 col-md-3">
-	    <div class="thumbnail">
-	      <img src="images/new-products/img3.jpg" height="130" width="241" alt="Kay Lea Modern Bed Set">
-	      <div class="caption">
-	        <h4>Kay lea modern bed set <span class="pull-right">&#163;59.99</span></h4>
-	        <p>For fans of minimalism we have the classic black and white bed set by new designer Kay Lea. 
-2 pillow cases, quilt cover and sheet.</p>
-	        <p>
-		        <a href="#" class="btn btn-primary" role="button">View</a> 
-		        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-	        </p>
-	      </div>
-	    </div>
-	  </div>
-	  	  
-	  <div class="col-sm-3 col-md-3">
-	    <div class="thumbnail">
-	      <img src="images/new-products/img4.jpg" height="130" width="241" alt="Ali Baba &amp; Rug Cushion ">
-	      <div class="caption">
-	        <h4>Ali Baba Rug &amp; Cushion  <span class="pull-right">&#163;259.99</span></h4>
-	        <p>A  taste of the exotic with this hand made Turkish rug and matching cushion in stain resistant, softened 100% cotton.</p>
-	        <p>
-		        <a href="#" class="btn btn-primary" role="button">View</a> 
-		        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-	        </p>
-	      </div>
-	    </div>
-	  </div>
-	  
-	</div>
-
-
-
-
-
-
-
-	<div class="row">
-		<h3 class="important-info">Featured products</h3>
-	  <div class="col-sm-3 col-md-3">
-	    <div class="thumbnail">
-	      <img src="images/featured-products/img1.jpg" height="130" width="241" alt="Royale Curtains">
-	      <div class="caption">
-	        <h4>Royale curtains <span class="pull-right">&#163;159.99</span></h4>
-	        <p>A range of colours compliment what have to be the thickest curtains we have ever seen. As soft as velvet and available in a range of sizes.</p>
-	        <p>
-		        <a href="#" class="btn btn-primary" role="button">View</a> 
-		        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-	        </p>
-	      </div>
-	    </div>
-	  </div>
-	  
-	  <div class="col-sm-3 col-md-3">
-	    <div class="thumbnail">
-	      <img src="images/featured-products/img2.jpg" height="130" width="241" alt="Claire Aitch Zebra Rug ">
-	      <div class="caption">
-	        <h4>Claire Aitch Zebra Rug  <span class="pull-right">&#163;129.99</span></h4>
-	        <p>Contemporary, 3 inch deep sheeps wool rug by designer Claire Aitch. Hessian backed for extra long life and stain resistant.</p>
-	        <p>
-		        <a href="#" class="btn btn-primary" role="button">View</a> 
-		        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-	        </p>
-	      </div>
-	    </div>
-	  </div>
-	  	  
-	  <div class="col-sm-3 col-md-3">
-	    <div class="thumbnail">
-	      <img src="images/featured-products/img3.jpg" height="130" width="241" alt="Real Pine Wood Flooring">
-	      <div class="caption">
-	        <h4>Real pine wood flooring <span class="pull-right">&#163;19.99</span></h4>
-	        <p>Save 50% on this real English Pine wood flooring while stocks last. Was £39.98 now £19.99 per square metre. </p>
-	        <p>
-		        <a href="#" class="btn btn-primary" role="button">View</a> 
-		        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-	        </p>
-	      </div>
-	    </div>
-	  </div>
-	  	  
-	  <div class="col-sm-3 col-md-3">
-	    <div class="thumbnail">
-	      <img src="images/featured-products/img4.jpg" height="130" width="241" alt="Modern Flowers Bed Set">
-	      <div class="caption">
-	        <h4>Modern flowers bed set <span class="pull-right">&#163;89.99</span></h4>
-	        <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer Claire Aitch.</p>
-	        <p>
-		        <a href="#" class="btn btn-primary" role="button">View</a> 
-		        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-	        </p>
-	      </div>
-	    </div>
-	  </div>
-
 	</div>
 	
 	<footer class="footer">
@@ -353,18 +350,18 @@ Claire Aitch</p>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
 	<script src="js/script.min.js" type="text/javascript"></script>
 
+</body>
+</html>
 	
-<!-- 	<script src="js/angular.js" type="text/javascript"></script>
-	<script src="js/ui-bootstrap-tpls-0.11.2.js" type="text/javascript"></script>
+<!-- 	<script src="../src/js/angular.js" type="text/javascript"></script>
+	<script src="../src/js/ui-bootstrap-tpls-0.11.2.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-touch.js" type="text/javascript"></script>
 
 
-	<script src="js/plugins/AngularJS/app.js" type="text/javascript"></script>
-	<script src="js/plugins/AngularJS/custom-bootstrap.js" type="text/javascript"></script> -->
+	<script src="../src/js/plugins/AngularJS/app.js" type="text/javascript"></script>
+	<script src="../src/js/plugins/AngularJS/custom-bootstrap.js" type="text/javascript"></script> -->
 
 
 	
-	<!-- <script src="js/jquery.min.js" type="text/javascript"></script> -->
-	<!-- <script src="js/plugins/bootstrap.js" type="text/javascript"></script> -->
-</body>
-</html>
+<!-- 	<script src="../src/js/jquery.min.js" type="text/javascript"></script>
+	<script src="../src/js/plugins/bootstrap.js" type="text/javascript"></script> -->

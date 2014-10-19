@@ -28,12 +28,12 @@ li.open>a {
 
 .search-form {
 
-	position: relative;
+	@extend %form;
 
-	& &__input {
+	&__input {
 
-		padding-right: em(30px);
-		width        : em(220px);
+		padding-right: em(30px) !important;
+		width        : em(220px) !important;
 
 		@extend      .form-control;
 
@@ -41,20 +41,24 @@ li.open>a {
 
 	&__button {
 
-		position  : absolute;
 
 		top       : em(2px);
-		right     : em(5px);
+		right     : em(5px);		
 
-		background: linear-gradient(#fff, rgba(180, 152, 144, 0.2));
-		
+		@extend %button;
+		@extend .btn-xs;
+		@extend .btn;
+		@extend .btn-default;
+
 		&:focus {
 
-			outline: none;
+			@extend %button-focus;
 
 		}
 
-		>.search-form__icon {
+	}
+
+		&__icon {
 	
 			transform    : scaleX(-1);
 		 
@@ -62,12 +66,6 @@ li.open>a {
 			@extend      .glyphicon-search;
 	
 		}
-
-		@extend .btn-xs;
-		@extend .btn;
-		@extend .btn-default;
-
-	}
 
 	@extend          .navbar-form;
 	@extend          .pull-right;

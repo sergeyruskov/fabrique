@@ -1,11 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Gudea|Raleway:400,100);
 
 // AngularJS
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.nav, .pagination, .carousel, .panel-title a, .active-currency { cursor: pointer; }
 //==============================================================
 body {
 
 	@include background(image-url("bg.jpg"));
+	padding: em(65px) 0 em(40px);
 	
 }
 
@@ -13,23 +14,36 @@ body {
 .content, 
 .footer {
 
-	padding    : 40px;
-	border     : 1px solid #fff;
+	padding    : em(40px);
+	border     : em(1px) solid $white;
 	background : rgba(255, 255, 255, .8);
 
 	@extend .container;
 	
 }
 
+.content, 
+.footer {
+
+	margin-top: em(15px);
+	
+}
+
+h1 {
+
+	font: em(24px) $font-family--secondary;
+
+}
+
 h3 {
 
-	font: 24px $font-family--secondary;
+	font: em(24px) $font-family--secondary;
 
 }
 
 h4 {
 
-	font  : 14px $font-family--secondary;
+	font  : em(14px) $font-family--secondary;
 	color : $color-accent;
 
 }

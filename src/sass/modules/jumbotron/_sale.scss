@@ -1,0 +1,70 @@
+.sale {
+
+	padding-left: em(15px);
+
+	@extend     .col-md-3;
+	@extend     .col-sm-3;
+
+	&__discount {
+
+		height          : em(257px);
+	 	background-image: inline-image('../base64/sale/info.jpg');
+		margin-bottom   : em(10px);
+
+		@extend         .show;
+
+	}
+
+	&__message {
+
+	 	border-top   : em(1px) dotted $black;
+	 	padding      : em(5px) em(40px) em(12px) 0;
+	 	margin-bottom: 0;
+
+	 	@extend .my-icons-news;
+
+	}
+}
+
+	.email-form {
+
+		margin : 0;
+
+		@extend %form;
+		@extend .navbar-form;
+		@extend .show;
+		@extend .navbar-left; 
+
+		&__input {
+			
+			width        : em(219px) !important;
+			padding-right: em(30px);
+
+			@extend .form-control;
+
+		}
+
+		&__submit-button {
+
+			right   : em(3px);
+			top     : em(2px);
+			font-size: 1px !important;
+
+			&:focus {
+
+				@extend %button-focus;
+
+			}
+
+			@extend %button;
+		 	@extend .btn;
+		 	// @extend .btn-xs;
+		 	@extend .btn-default;
+
+		}
+	}
+
+
+
+
+  

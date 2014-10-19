@@ -1,0 +1,16 @@
+%form {
+	position: relative;
+}
+
+	%button {
+
+		position  : absolute;
+		background: linear-gradient(#fff, rgba(180, 152, 144, 0.2));
+
+	}
+
+		%button-focus {
+
+			outline: none;
+
+		}

@@ -1,6 +1,6 @@
 (function(){
 
-var app = angular.module('app',['ui.bootstrap','customBootstrap']);
+var app = angular.module('app',['ui.bootstrap','customBootstrap','ngSanitize']);
 
 app.controller('fabrique', function(){
 	this.basketUserName = userName;
@@ -23,8 +23,7 @@ app.controller('activeCurrencyCtrl',function () {
 
 
 //Main menu active link
-app.controller('activeMainMenuCtrl',function () {
-
+app.controller('activeMainMenuCtrl',['$scope', function ($scope) {
 	this.selectItem = 1;
 
     this.setTrigger = function(activeCurrency){
@@ -34,7 +33,7 @@ app.controller('activeMainMenuCtrl',function () {
     this.activeClass = function(activeClass){
 		return this.selectItem === activeClass;
 	};
-});
+}]);
 
 
 //Basket

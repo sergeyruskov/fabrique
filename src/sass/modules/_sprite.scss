@@ -1,4 +1,4 @@
-.my-icons-sprite, .my-icons-Discover, .my-icons-FaceBook, .my-icons-Mastercard, .my-icons-Twitter, .my-icons-news, .my-icons-offer20, .my-icons-paypal, .my-icons-visa {
+.my-icons-sprite, .my-icons-Discover, .my-icons-FaceBook, .my-icons-Mastercard, .my-icons-Twitter, .my-icons-basket, .my-icons-news, .my-icons-paypal, .my-icons-visa {
   background-image: url('../images/sprite.png');
   background-repeat: no-repeat;
 }
@@ -8,29 +8,29 @@
 }
 
 .my-icons-FaceBook {
-  background-position: 0 -48px;
+  background-position: 0 -198px;
 }
 
 .my-icons-Mastercard {
-  background-position: 0 -80px;
+  background-position: 0 -380px;
 }
 
 .my-icons-Twitter {
-  background-position: 0 -128px;
+  background-position: 0 -578px;
+}
+
+.my-icons-basket {
+  background-position: 0 -760px;
 }
 
 .my-icons-news {
-  background-position: 0 -160px;
-}
-
-.my-icons-offer20 {
-  background-position: 0 -208px;
+  background-position: 184px -931px;
 }
 
 .my-icons-paypal {
-  background-position: 0 -240px;
+  background-position: 0 -1140px;
 }
 
 .my-icons-visa {
-  background-position: 0 -271px;
+  background-position: 0 -1321px;
 }
