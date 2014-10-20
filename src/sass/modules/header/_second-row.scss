@@ -26,28 +26,22 @@ li.open>a {
 // Search in main navigation menu
 // ==========================================================================
 
-.search-form {
+.form-btn-inside {
 
 	@extend %form;
 
 	&__input {
-
-		padding-right: em(30px) !important;
-		width        : em(220px) !important;
-
-		@extend      .form-control;
+		
+		@extend %input;
+		@extend .form-control;
 
 	}
 
-	&__button {
-
-
-		top       : em(2px);
-		right     : em(5px);		
+	&__submit-button {	
 
 		@extend %button;
-		@extend .btn-xs;
 		@extend .btn;
+		@extend .btn-xs;
 		@extend .btn-default;
 
 		&:focus {

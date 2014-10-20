@@ -22,7 +22,7 @@ body {
 	
 }
 
-.content, 
+.content,
 .footer {
 
 	margin-top: em(15px);
@@ -37,13 +37,13 @@ h1 {
 
 h3 {
 
-	font: em(24px) $font-family--secondary;
+	font          : em(24px) $font-family--secondary;
+	text-transform: uppercase;
 
 }
 
 h4 {
 
 	font  : em(14px) $font-family--secondary;
-	color : $color-accent;
-
+	
 }

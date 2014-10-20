@@ -115,14 +115,14 @@
 
 					</ul>
 
-					<form class="search-form" role="search">
+					<form class="form-btn-inside" role="search">
 
 						<div class="form-group">
-						  <input type="text" class="search-form__input" placeholder="Search...">
+						  <input type="text" class="form-btn-inside__input" placeholder="Search...">
 						</div>
 						 
-        				<button type="submit" class="search-form__button">
-        					<span class="search-form__icon"></span>
+        				<button type="submit" class="form-btn-inside__submit-button">
+        					<span class="form-btn-inside__icon"></span>
         				</button>
 					</form>						
 
@@ -131,8 +131,8 @@
 		</nav>
 	</header>
 	<div class="content">
-		<div class="row">
-	
+
+		<div class="slider-and-sale">
 			<div class="col-sm-9 col-md-9">
 				<div data-ng-controller="carouselCtrl as carousel">
 				    <carousel interval="myInterval">
@@ -148,75 +148,76 @@
 				</div>
 			</div>
 		
-			<aside class="sale">
-
+			<aside class="sale" data-ng-controller="emailValidationCtrl as emailValid">
 				<a href="#" class="sale__discount"></a>
-				<!-- тут надо подумать как расположить картинку, можно в новый див поставить спрайт -->
 				<p class="sale__message">Subscribe to our free monthly newsletter and be the first to hear about our offers.</p>
-				<form class="email-form" role="search">
+				<form class="form-btn-inside--email" role="search" name='emailForm' ng-submit='emailValid.emailSubmit(emailForm.$valid)' novalidation>
 					<div class="form-group">
-					  <input type="text" class="email-form__input" placeholder="Email...">
+					  <input name="input" type='email' class="form-btn-inside--email__input--email" placeholder="Email..." required>
 					</div>
-					<button type="submit" class="email-form__submit-button">
+					<button type="submit" class="form-btn-inside--email__submit-button">
 						<span class="glyphicon glyphicon-chevron-right"></span>
 					</button>
 				</form>
-
 			</aside>
-		
-		
+		</div>
 		
 		<div class="row">
-			<h3 class="important-info">New products</h3>
-		  <div class="col-sm-3 col-md-3">
-		    <div class="thumbnail">
-		      <img src="images/new-products/img1.jpg" height="130" width="241" alt="Clare Aitch Bath Sheets">
-		      <div class="caption">
-		        <h4>Claire aitch bath sheets <span class="pull-right">&#163;29.99</span></h4>
-		        <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer
-		Claire Aitch</p>
-		        <p>
-			        <a href="#" class="btn btn-primary" role="button">View</a> 
-			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-		        </p>
-		      </div>
-		    </div>
-		  </div>
+			<div class="col-sm-12">
+				<h3 class="important-info">New products</h3>
+			</div>
+		</div>
+		
+		<div class="thumbnails-wrapper">
+			<div class="col-sm-3">
+				<div class="thumbnail">
+				  <img src="images/new-products/img1.jpg" class="img-responsive" height="130" width="241" alt="Clare Aitch Bath Sheets">
+				  <div class="caption">
+				    <h4><a href="#">Claire aitch bath sheets <span>&#163;29.99</span></a></h4>
+				    <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer
+				Claire Aitch</p>
+				    <p>
+				        <a href="#" class="btn btn-primary" role="button">View</a> 
+				        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+				    </p>
+				  </div>
+				</div>
+			</div>
 		  
-		  <div class="col-sm-3 col-md-3">
-		    <div class="thumbnail">
-		      <img src="images/new-products/img2.jpg" height="130" width="241" alt="Chocolate Cushion Set">
-		      <div class="caption">
-		        <h4>Chocolate cushion set <span class="pull-right">&#163;36.99</span></h4>
-		        <p>Who can resist the temptation and comfort of this trilogy of chocolate coloured cushions? Deep filled for ultimate comfort and so frilly!</p>
-		        <p>
-			        <a href="#" class="btn btn-primary" role="button">View</a> 
-			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-		        </p>
-		      </div>
-		    </div>
-		  </div>
+			<div class="col-sm-3 col-md-3">
+				<div class="thumbnail">
+				  <img src="images/new-products/img2.jpg" height="130" width="241" alt="Chocolate Cushion Set">
+				  <div class="caption">
+				    <h4><a href="#">Chocolate cushion set <span>&#163;36.99</span></a></h4>
+				    <p>Who can resist the temptation and comfort of this trilogy of chocolate coloured cushions? Deep filled for ultimate comfort and so frilly!</p>
+				    <p>
+				        <a href="#" class="btn btn-primary" role="button">View</a> 
+				        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+				    </p>
+				  </div>
+				</div>
+			</div>
 		  
-		  <div class="col-sm-3 col-md-3">
-		    <div class="thumbnail">
-		      <img src="images/new-products/img3.jpg" height="130" width="241" alt="Kay Lea Modern Bed Set">
-		      <div class="caption">
-		        <h4>Kay lea modern bed set <span class="pull-right">&#163;59.99</span></h4>
-		        <p>For fans of minimalism we have the classic black and white bed set by new designer Kay Lea. 
-		2 pillow cases, quilt cover and sheet.</p>
-		        <p>
-			        <a href="#" class="btn btn-primary" role="button">View</a> 
-			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-		        </p>
-		      </div>
-		    </div>
-		  </div>
+			<div class="col-sm-3 col-md-3">
+				<div class="thumbnail">
+				  <img src="images/new-products/img3.jpg" height="130" width="241" alt="Kay Lea Modern Bed Set">
+				  <div class="caption">
+				    <h4><a href="#">Kay lea modern bed set <span>&#163;59.99</span></a></h4>
+				    <p>For fans of minimalism we have the classic black and white bed set by new designer Kay Lea. 
+				2 pillow cases, quilt cover and sheet.</p>
+				    <p>
+				        <a href="#" class="btn btn-primary" role="button">View</a> 
+				        <a href="#" class="btn btn-default" role="button">Add to basket</a>
+				    </p>
+				  </div>
+				</div>
+			</div>
 		  	  
 		  <div class="col-sm-3 col-md-3">
 		    <div class="thumbnail">
 		      <img src="images/new-products/img4.jpg" height="130" width="241" alt="Ali Baba &amp; Rug Cushion ">
 		      <div class="caption">
-		        <h4>Ali Baba Rug &amp; Cushion  <span class="pull-right">&#163;259.99</span></h4>
+			    <h4><a href="#">Ali Baba Rug &amp; Cushion  <span>&#163;259.99</span></a></h4>
 		        <p>A  taste of the exotic with this hand made Turkish rug and matching cushion in stain resistant, softened 100% cotton.</p>
 		        <p>
 			        <a href="#" class="btn btn-primary" role="button">View</a> 
@@ -226,6 +227,7 @@
 		    </div>
 		  </div>
 		  
+		</div>
 		</div>
 		
 		

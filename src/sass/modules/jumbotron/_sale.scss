@@ -1,68 +1,74 @@
-.sale {
+.slider-and-sale {
 
-	padding-left: em(15px);
+	padding-bottom  : em(20px);
+ 	border-bottom   : em(1px) dotted $brand-primary;
 
-	@extend     .col-md-3;
-	@extend     .col-sm-3;
+	@extend .row;
 
-	&__discount {
-
-		height          : em(257px);
-	 	background-image: inline-image('../base64/sale/info.jpg');
-		margin-bottom   : em(10px);
-
-		@extend         .show;
-
-	}
-
-	&__message {
-
-	 	border-top   : em(1px) dotted $black;
-	 	padding      : em(5px) em(40px) em(12px) 0;
-	 	margin-bottom: 0;
-
-	 	@extend .my-icons-news;
-
-	}
 }
 
-	.email-form {
+	.sale {
 
-		margin : 0;
+		padding-left: em(15px);
 
-		@extend %form;
-		@extend .navbar-form;
-		@extend .show;
-		@extend .navbar-left; 
+		@extend     .col-md-3;
+		@extend     .col-sm-3;
 
-		&__input {
-			
-			width        : em(219px) !important;
-			padding-right: em(30px);
+		&__discount {
 
-			@extend .form-control;
+			height          : em(257px);
+		 	background-image: inline-image('../base64/sale/info.jpg');
+			margin-bottom   : em(10px);
+
+			@extend         .show;
 
 		}
 
-		&__submit-button {
+		&__message {
 
-			right   : em(3px);
-			top     : em(2px);
-			font-size: 1px !important;
+		 	border-top   : em(1px) dotted $brand-primary;
+		 	padding      : em(5px) em(40px) em(12px) 0;
+		 	margin-bottom: 0;
 
-			&:focus {
+		 	@extend .my-icons-news;
 
-				@extend %button-focus;
+		}
+	}
+
+		.form-btn-inside--email {
+
+			margin : 0;
+
+			@extend %form;
+			@extend .navbar-form;
+			@extend .show;
+			@extend .navbar-left; 
+
+			&__input--email {
+
+				background-color: $white;
+
+				@extend %input;
+				@extend .form-control;
 
 			}
 
-			@extend %button;
-		 	@extend .btn;
-		 	// @extend .btn-xs;
-		 	@extend .btn-default;
+			&__submit-button {
 
+
+				&:focus {
+
+					@extend %button-focus;
+
+				}
+
+				@extend %button;
+			 	@extend .btn;
+			 	@extend .btn-xs;
+			 	@extend .btn-default;
+
+			}
 		}
-	}
 
 
 

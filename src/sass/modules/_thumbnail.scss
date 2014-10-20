@@ -1,0 +1,51 @@
+.thumbnails-wrapper {
+
+	padding-bottom: em(60px);
+
+	@extend .row;
+
+}
+
+	.important-info {
+
+		line-height: 2.95;
+		margin     : 0;
+		font-family: $font-family--secondary;
+
+	}
+	
+		.thumbnail {
+
+			border          : 0;
+			padding         : 0;
+			background-color: transparent;
+			margin-left     : em(20px);
+
+			&>img {
+
+				width : em(220px);
+				height: em(130px);
+
+			}
+
+			&>.caption>h4>a {
+
+				letter-spacing: -.1px;
+				color : $color-accent;
+
+
+				&>span {
+
+					@extend .pull-right;
+
+				}
+
+			}
+
+			&>p {
+
+				height: em(71px);
+
+			}
+
+		}

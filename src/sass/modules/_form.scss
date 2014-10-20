@@ -1,10 +1,24 @@
 %form {
+
 	position: relative;
+
 }
+
+	%input {
+
+		padding-right: em(30px)  !important;
+		width        : em(219px) !important;
+
+	}
 
 	%button {
 
+		right    : em(5px);
+		top      : em(4px);
+		font-size: em(10px);
+
 		position  : absolute;
+		
 		background: linear-gradient(#fff, rgba(180, 152, 144, 0.2));
 
 	}

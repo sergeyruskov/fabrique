@@ -60,6 +60,24 @@ app.controller('basketCtrl',function () {
 	};
 });
 
+app.controller('emailValidationCtrl', function(){
+	this.emailSubmit = function  (emailValidBoolead){
+		if(emailValidBoolead === true){
+			alert("I'll remember");
+		}
+	};
+	
+
+	this.emailForm = function (){
+		console.log(this.emailInput);
+	};
+
+	// this.emailInput = function (){
+	// 	this.emailInputBoolean = this.emailForm.$valid;
+	// };
+
+});
+
 })();
 
 
