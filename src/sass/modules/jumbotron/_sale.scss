@@ -52,6 +52,15 @@
 				@extend .form-control;
 
 			}
+				
+				//AngularJS		
+				.ng-dirty.ng-invalid-email {
+					border-color: $brand-danger;
+				}
+
+				.ng-dirty.ng-valid-email {
+					border-color: $brand-success;
+				}
 
 			&__submit-button {
 
@@ -69,6 +78,7 @@
 
 			}
 		}
+
 
 
 

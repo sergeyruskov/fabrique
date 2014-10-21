@@ -12,7 +12,7 @@ var compass = require('gulp-compass'),
     wordEnd = ".min";
 
 
-gulp.task('default', ['fonts', 'favicon', 'watch', 'imagemin', 'compass', 'minifyHtml','scripts']);
+gulp.task('default', ['fonts', 'minifyAngularTemplates', 'favicon', 'watch', 'imagemin', 'compass', 'minifyHtml','scripts']);
 
 //JS
 gulp.task('scripts', function () {
@@ -27,6 +27,13 @@ gulp.task('scripts', function () {
 });
 
 //HTML
+gulp.task('minifyAngularTemplates', function () {
+    gulp.src('js/plugins/templates/*.html')
+        .pipe(plumber()) 
+        .pipe(minifyHTML())
+        .pipe(gulp.dest(distPath + '/js/plugins/templates'));
+});
+
 gulp.task('minifyHtml', function () {
     gulp.src('index.html')
         .pipe(plumber()) 
@@ -86,8 +93,10 @@ gulp.task('watch', function () {
     gulp.watch('fonts/**/**', ['fonts']);
     gulp.watch('favicon.ico', ['favicon']);
     gulp.watch('images/**/**', ['imagemin']);
+    gulp.watch('js/plugins/templates/*.html', ['minifyAngularTemplates']);
 
     gulp.watch(distPath + 'images/**/**').on('change', livereload.changed);
+    gulp.watch(distPath + 'js/plugins/templates/**').on('change', livereload.changed);
     gulp.watch(distPath + 'fonts/**/**').on('change', livereload.changed);
     gulp.watch(distPath + 'favicon.ico').on('change', livereload.changed);
     gulp.watch(distPath + 'css/fabrique' + wordEnd + '.css').on('change', livereload.changed);

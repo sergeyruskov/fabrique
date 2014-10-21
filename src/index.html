@@ -58,7 +58,7 @@
 
 						<span class="basket__message__greeting">
 							Welcome 
-							<a href="#" class="basket__link"></a>
+							<a href="#" class="basket__link">yourname</a>
 
 						</span>
 
@@ -151,9 +151,9 @@
 			<aside class="sale" data-ng-controller="emailValidationCtrl as emailValid">
 				<a href="#" class="sale__discount"></a>
 				<p class="sale__message">Subscribe to our free monthly newsletter and be the first to hear about our offers.</p>
-				<form class="form-btn-inside--email" role="search" name='emailForm' ng-submit='emailValid.emailSubmit(emailForm.$valid)' novalidation>
+				<form class="form-btn-inside--email" role="search" name='emailForm' data-ng-submit='emailValid.emailSubmit(emailForm.$valid)' novalidation>
 					<div class="form-group">
-					  <input name="input" type='email' class="form-btn-inside--email__input--email" placeholder="Email..." required>
+					  <input name="input" data-ng-model="emailInput" type='email' class="form-btn-inside--email__input--email" placeholder="Email..." required>
 					</div>
 					<button type="submit" class="form-btn-inside--email__submit-button">
 						<span class="glyphicon glyphicon-chevron-right"></span>
@@ -162,79 +162,7 @@
 			</aside>
 		</div>
 		
-		<div class="row">
-			<div class="col-sm-12">
-				<h3 class="important-info">New products</h3>
-			</div>
-		</div>
-		
-		<div class="thumbnails-wrapper">
-			<div class="col-sm-3">
-				<div class="thumbnail">
-				  <img src="images/new-products/img1.jpg" class="img-responsive" height="130" width="241" alt="Clare Aitch Bath Sheets">
-				  <div class="caption">
-				    <h4><a href="#">Claire aitch bath sheets <span>&#163;29.99</span></a></h4>
-				    <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer
-				Claire Aitch</p>
-				    <p>
-				        <a href="#" class="btn btn-primary" role="button">View</a> 
-				        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-				    </p>
-				  </div>
-				</div>
-			</div>
-		  
-			<div class="col-sm-3 col-md-3">
-				<div class="thumbnail">
-				  <img src="images/new-products/img2.jpg" height="130" width="241" alt="Chocolate Cushion Set">
-				  <div class="caption">
-				    <h4><a href="#">Chocolate cushion set <span>&#163;36.99</span></a></h4>
-				    <p>Who can resist the temptation and comfort of this trilogy of chocolate coloured cushions? Deep filled for ultimate comfort and so frilly!</p>
-				    <p>
-				        <a href="#" class="btn btn-primary" role="button">View</a> 
-				        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-				    </p>
-				  </div>
-				</div>
-			</div>
-		  
-			<div class="col-sm-3 col-md-3">
-				<div class="thumbnail">
-				  <img src="images/new-products/img3.jpg" height="130" width="241" alt="Kay Lea Modern Bed Set">
-				  <div class="caption">
-				    <h4><a href="#">Kay lea modern bed set <span>&#163;59.99</span></a></h4>
-				    <p>For fans of minimalism we have the classic black and white bed set by new designer Kay Lea. 
-				2 pillow cases, quilt cover and sheet.</p>
-				    <p>
-				        <a href="#" class="btn btn-primary" role="button">View</a> 
-				        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-				    </p>
-				  </div>
-				</div>
-			</div>
-		  	  
-		  <div class="col-sm-3 col-md-3">
-		    <div class="thumbnail">
-		      <img src="images/new-products/img4.jpg" height="130" width="241" alt="Ali Baba &amp; Rug Cushion ">
-		      <div class="caption">
-			    <h4><a href="#">Ali Baba Rug &amp; Cushion  <span>&#163;259.99</span></a></h4>
-		        <p>A  taste of the exotic with this hand made Turkish rug and matching cushion in stain resistant, softened 100% cotton.</p>
-		        <p>
-			        <a href="#" class="btn btn-primary" role="button">View</a> 
-			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-		        </p>
-		      </div>
-		    </div>
-		  </div>
-		  
-		</div>
-		</div>
-		
-		
-		
-		
-		
-		
+		<newproducts></newproducts>		
 		
 		<div class="row">
 			<h3 class="important-info">Featured products</h3>
@@ -295,7 +223,6 @@
 		  </div>
 		
 		</div>
-	</div>
 	</div>
 	
 	<footer class="footer">

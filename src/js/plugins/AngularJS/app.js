@@ -1,25 +1,34 @@
 (function(){
 
-var app = angular.module('app',['ui.bootstrap','customBootstrap','ngSanitize']);
+var app = angular.module('app',['ui.bootstrap','customBootstrap','ngSanitize', 'thumbnail']);
 
 app.controller('fabrique', function(){
 	this.basketUserName = userName;
 });
 
+app.factory('theService', function() {  
+    return {
+        thing : {
+            x : 100
+        }
+    };
+});
+
+
 
 //Currency active link
-app.controller('activeCurrencyCtrl',function () {
+app.controller('activeCurrencyCtrl',['theService', function (theService) {
 
-	this.selectItem = 1;
+	theService.selectItem = 1;
 
     this.setTrigger = function(activeCurrency){
-		this.selectItem = activeCurrency;
+		theService.selectItem = activeCurrency;
 	};
 
     this.activeClass = function(activeClass){
-		return this.selectItem === activeClass;
+		return theService.selectItem === activeClass;
 	};
-});
+}]);
 
 
 //Main menu active link
@@ -37,7 +46,7 @@ app.controller('activeMainMenuCtrl',['$scope', function ($scope) {
 
 
 //Basket
-//ng-click="basket.addItem()" - добавить на кнопку Add To Basket
+
 app.controller('basketCtrl',function () {
 
 	this.numberOfItems = 0;
@@ -66,17 +75,9 @@ app.controller('emailValidationCtrl', function(){
 			alert("I'll remember");
 		}
 	};
-	
-
-	this.emailForm = function (){
-		console.log(this.emailInput);
-	};
-
-	// this.emailInput = function (){
-	// 	this.emailInputBoolean = this.emailForm.$valid;
-	// };
 
 });
+
 
 })();
 

@@ -1,0 +1,19 @@
+<div class="thumbnails-wrapper">
+	<h3 class="important-info">{{store.newProductsHeader}}</h3>
+	<div class="col-sm-3" data-ng-repeat='product in store.products'>
+		<div class="thumbnail">
+		  <a href="#"><img class="thumbnail__img" data-ng-src="{{product.images}}" style="height:130px;width:220px" alt="Clare Aitch Bath Sheets"></a>
+		  <div class="caption">
+		    <h4 class="thumbnail__product-name-and-price">
+		    	<a href="#" class="thumbnail__product-name-and-price__links--product-name">{{product.productName}}</a>
+				<a href="#" ng-hide="{{store.hidePrice()}}" class="thumbnail__product-name-and-price__links--price">{{product.price | currency : '&#163;'}}</a>				  
+			</h4>
+		    <p class="thumbnail__text">{{product.text}}</p>
+		    <p class="thumbnail__button-group">
+		        <a class="thumbnail__buttons" role="button">View</a> 
+		        <a class="thumbnail__buttons" role="button" ng-click="basket.addItem()">Add to basket</a>
+		    </p>
+		  </div>
+		</div>
+	</div>
+</div>

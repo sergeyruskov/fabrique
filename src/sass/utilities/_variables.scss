@@ -16,10 +16,15 @@ $font-weight--bold       : 700;
 
 // Color Usage
 
-$brand-primary           : #999;
+$brand-primary           : #888;
 $color-secondary         : #666;
 $color-third             : #333;
-$color-accent            : #ad9;
+
+$color-accent            : #0a0;
+$color-accent-hover      : darken($color-accent, 15%);
+
+$btn-border-color        : #bbb;
+$btn-border-color-hover  : darken(#bbb, 15%);
 
 $white                   : #fff;
 $black                   : #000;
