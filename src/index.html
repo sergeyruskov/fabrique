@@ -130,7 +130,7 @@
 			</div>
 		</nav>
 	</header>
-	<div class="content">
+	<div class="content" ng-controller="contentController as contentCtrl">
 
 		<div class="slider-and-sale">
 			<div class="col-sm-9 col-md-9">
@@ -140,7 +140,7 @@
 				        <img alt="{{slide.alt}}" data-ng-src="{{slide.image}}" class="img-responsive" height="370" width="700">
 				        <div class="slider__content-block">
 				          <h1 class="slider__content-block__header">{{slide.header}}</h1>
-				          <p class="slider__content-block__paragraph" data-ng-bind-html='slide.paragraph'></p>
+				          <p class="slider__content-block__paragraph" data-ng-bind-html="slide.paragraph"></p>
 				          <a href="#" class="slider__content-block__preview">Preview</a>
 				        </div>
 				      </slide>
@@ -151,9 +151,9 @@
 			<aside class="sale" data-ng-controller="emailValidationCtrl as emailValid">
 				<a href="#" class="sale__discount"></a>
 				<p class="sale__message">Subscribe to our free monthly newsletter and be the first to hear about our offers.</p>
-				<form class="form-btn-inside--email" role="search" name='emailForm' data-ng-submit='emailValid.emailSubmit(emailForm.$valid)' novalidation>
+				<form class="form-btn-inside--email" role="search" name="emailForm" data-ng-submit="emailValid.emailSubmit(emailForm.$valid)" novalidation>
 					<div class="form-group">
-					  <input name="input" data-ng-model="emailInput" type='email' class="form-btn-inside--email__input--email" placeholder="Email..." required>
+					  <input name="input" data-ng-model="emailInput" type="email" class="form-btn-inside--email__input--email" placeholder="Email..." required>
 					</div>
 					<button type="submit" class="form-btn-inside--email__submit-button">
 						<span class="glyphicon glyphicon-chevron-right"></span>

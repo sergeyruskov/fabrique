@@ -2,37 +2,28 @@
 
 var app = angular.module('app',['ui.bootstrap','customBootstrap','ngSanitize', 'thumbnail']);
 
-app.controller('fabrique', function(){
-	this.basketUserName = userName;
-});
-
-app.factory('theService', function() {  
-    return {
-        thing : {
-            x : 100
-        }
-    };
+//Connector between activeCurrencyCtrl and store
+app.service('selectItem',function(){
+    this.selectItem = 1;
 });
 
 
 
 //Currency active link
-app.controller('activeCurrencyCtrl',['theService', function (theService) {
+app.controller('activeCurrencyCtrl',['selectItem',function (selectItem) {
 
-	theService.selectItem = 1;
-
-    this.setTrigger = function(activeCurrency){
-		theService.selectItem = activeCurrency;
+	this.setTrigger = function(activeCurrency){
+		selectItem.selectItem = activeCurrency;
 	};
 
     this.activeClass = function(activeClass){
-		return theService.selectItem === activeClass;
+		return selectItem.selectItem === activeClass;
 	};
 }]);
 
 
 //Main menu active link
-app.controller('activeMainMenuCtrl',['$scope', function ($scope) {
+app.controller('activeMainMenuCtrl',function () {
 	this.selectItem = 1;
 
     this.setTrigger = function(activeCurrency){
@@ -42,7 +33,7 @@ app.controller('activeMainMenuCtrl',['$scope', function ($scope) {
     this.activeClass = function(activeClass){
 		return this.selectItem === activeClass;
 	};
-}]);
+});
 
 
 //Basket
@@ -77,8 +68,4 @@ app.controller('emailValidationCtrl', function(){
 	};
 
 });
-
-
 })();
-
-
