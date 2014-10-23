@@ -37,7 +37,7 @@
 			</nav>
 
 			<span class="currency" data-ng-controller="activeCurrencyCtrl as active">
-
+			
 				Currency:
 				<a class="active-currency" data-ng-click="active.setTrigger(1)" data-ng-class="{'active-link':active.activeClass(1)}">&#163;</a>
 				<a class="active-currency" data-ng-click="active.setTrigger(2)" data-ng-class="{'active-link':active.activeClass(2)}">$</a>
@@ -161,11 +161,11 @@
 				</form>
 			</aside>
 		</div>
-		
-		<newproducts></newproducts>		
-		
+<!-- AngularJS directives --><!-- info="newprblock" info="new" -->
+		<block-name info="new">{{new}}</block-name>
+		<!-- AngularJS directives end -->
 		<div class="row">
-			<h3 class="important-info">Featured products</h3>
+		  <h3 class="important-info">Featured products</h3>
 		  <div class="col-sm-3 col-md-3">
 		    <div class="thumbnail">
 		      <img src="images/featured-products/img1.jpg" height="130" width="241" alt="Royale Curtains">
@@ -208,21 +208,20 @@
 		    </div>
 		  </div>
 		  	  
-		  <div class="col-sm-3 col-md-3">
-		    <div class="thumbnail">
-		      <img src="images/featured-products/img4.jpg" height="130" width="241" alt="Modern Flowers Bed Set">
-		      <div class="caption">
-		        <h4>Modern flowers bed set <span class="pull-right">&#163;89.99</span></h4>
-		        <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer Claire Aitch.</p>
-		        <p>
+		<div class="col-sm-3 col-md-3">
+			<div class="thumbnail">
+			  <img src="images/featured-products/img4.jpg" height="130" width="241" alt="Modern Flowers Bed Set">
+			  <div class="caption">
+			    <h4>Modern flowers bed set <span class="pull-right">&#163;89.99</span></h4>
+			    <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer Claire Aitch.</p>
+			    <p>
 			        <a href="#" class="btn btn-primary" role="button">View</a> 
 			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-		        </p>
-		      </div>
-		    </div>
-		  </div>
-		
+			    </p>
+			  </div>
+			</div>
 		</div>
+		
 	</div>
 	
 	<footer class="footer">

@@ -1,36 +1,77 @@
 (function () {
 
-var app = angular.module('thumbnail', []);
+var app = angular.module('thumbnail', [/*"template/productblock.html"*/]);
 
-app.controller('contentController',['selectItem','$scope', function (selectItem, $scope) {
+app.controller('contentController',['selectItem','$scope','$http', function (selectItem, $scope, $http) {
 
-	this.currency = {
-		GBP: function () {
-			return selectItem.selectItem === 1;
-		},
+	function one (data) {
+		$scope.new = {
+			header : data.products.new.header,
+			content : data.products.new.content[0]
+		};
+	}
 
-		USD: function () {
-			return selectItem.selectItem === 2;
-		},
+	//Получение данных из database.json, там продукты.
+	$http.get('js/database.json').success(function (data, status, headers, config) {
+		
+		one(data);
 
-		EUR: function () {
-			return selectItem.selectItem === 3;
-		}
-	};
+	});
 
-	this.newProductsBlock = {
-		header: newProducts.header,
-		content: newProducts.content
-	};
+			
+	//Переключать валюты, связан с selectItem из app.js
+	// this.currency = {
+	// 	GBP: function () {
+	// 		return selectItem.selectItem === 1;
+	// 	},
+
+	// 	USD: function () {
+	// 		return selectItem.selectItem === 2;
+	// 	},
+
+	// 	EUR: function () {
+	// 		return selectItem.selectItem === 3;
+	// 	}
+	// };
+	
+	// element.('.row').click();
+
+// Так как JS работает ассинхронно, мы не сможем пол
+
+	
 
 }]);
+	app.directive('blockName', function() { 
+		return { 
+				restrict: 'E',
+				scope: {
+					name: "=info"
+				},
+				template: '{{name.header}}'
+			};
+		});
+})();
 
-app.directive('newproducts', function () {
-	return {
-		restrict: 'E',
-		templateUrl: 'js/plugins/templates/new-products.html'
-		};
-});
+// app.directive('newproducts', function () {
+// 	return {
+// 		restrict: 'E',
+// 		templateUrl: 'js/plugins/templates/new-products.html'
+// 	};
+// });
+
+
+// app.directive('product', function () {
+// 	return {
+// 		restrict: 'E',
+// 		scope: {
+// 			name: '=info'
+// 		},
+// 		templateUrl: 'template/productblock.html'
+// 	};
+// });
+
+
+
 
 
 // app.directive('featured-products',function () {
@@ -76,64 +117,3 @@ app.directive('newproducts', function () {
 // };
 
 
-
-
-var newProducts = {
-	header: 'New product',
-	content: [
-		{
-			image      : 'images/new-products/img1.jpg',
-			productName : 'Claire aitch bath sheets',
-			price       : '29.99',
-			text        : "Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer Claire Aitch"
-		},
-		{
-			image      : 'images/new-products/img2.jpg',
-			productName : 'Chocolate cushion set',
-			price       : '36.99',
-			text        : 'Who can resist the temptation and comfort of this trilogy of chocolate coloured cushions? Deep filled for ultimate comfort and so frilly!',
-		},
-		{
-			image      : 'images/new-products/img3.jpg',
-			productName : 'Kay lea modern bed set',
-			price       : '59.99',
-			text        : 'For fans of minimalism we have the classic black and white bed set by new designer Kay Lea. 2 pillow cases, quilt cover and sheet.'
-		},
-		{
-			image      : 'images/new-products/img4.jpg',
-			productName : 'Ali Baba Rug & Cushion',
-			price       : '259.99',
-			text        : 'A  taste of the exotic with this hand made Turkish rug and matching cushion in stain resistant, softened 100% cotton.'
-		}
-
-	]
-};
-
-// var newProductsContent = [
-// 			{
-// 				images      : 'images/new-products/img1.jpg',
-// 				productName : 'Claire aitch bath sheets',
-// 				price       : '29.99',
-// 				text        : "Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer Claire Aitch"
-// 			},
-// 			{
-// 				images      : 'images/new-products/img2.jpg',
-// 				productName : 'Chocolate cushion set',
-// 				price       : '36.99',
-// 				text        : 'Who can resist the temptation and comfort of this trilogy of chocolate coloured cushions? Deep filled for ultimate comfort and so frilly!',
-// 			},
-// 			{
-// 				images      : 'images/new-products/img3.jpg',
-// 				productName : 'Kay lea modern bed set',
-// 				price       : '59.99',
-// 				text        : 'For fans of minimalism we have the classic black and white bed set by new designer Kay Lea. 2 pillow cases, quilt cover and sheet.'
-// 			},
-// 			{
-// 				images      : 'images/new-products/img4.jpg',
-// 				productName : 'Ali Baba Rug & Cushion',
-// 				price       : '259.99',
-// 				text        : 'A  taste of the exotic with this hand made Turkish rug and matching cushion in stain resistant, softened 100% cotton.'
-// 			}
-// 		];
-	
-})();

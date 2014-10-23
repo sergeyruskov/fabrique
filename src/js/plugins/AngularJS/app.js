@@ -8,7 +8,6 @@ app.service('selectItem',function(){
 });
 
 
-
 //Currency active link
 app.controller('activeCurrencyCtrl',['selectItem',function (selectItem) {
 
@@ -19,6 +18,9 @@ app.controller('activeCurrencyCtrl',['selectItem',function (selectItem) {
     this.activeClass = function(activeClass){
 		return selectItem.selectItem === activeClass;
 	};
+
+
+
 }]);
 
 
