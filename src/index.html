@@ -162,7 +162,11 @@
 			</aside>
 		</div>
 <!-- AngularJS directives --><!-- info="newprblock" info="new" -->
-		<block-name info="new">{{new}}</block-name>
+		<product-block info="new">
+			<block-name>{{new.header}}</block-name>
+			<content kind-of-product="new" currency="currency"></content>
+		</product-block>
+		 <!-- kind-of-product="new" -->
 		<!-- AngularJS directives end -->
 		<div class="row">
 		  <h3 class="important-info">Featured products</h3>

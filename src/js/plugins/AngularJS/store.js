@@ -1,55 +1,79 @@
 (function () {
 
-var app = angular.module('thumbnail', [/*"template/productblock.html"*/]);
+var app = angular.module('thumbnail', ["template/productblock.html", "template/blockname.html", "template/content.html"]);
 
 app.controller('contentController',['selectItem','$scope','$http', function (selectItem, $scope, $http) {
 
-	function one (data) {
+	successAnswer = function (data) {
+		store = data;
 		$scope.new = {
-			header : data.products.new.header,
-			content : data.products.new.content[0]
+			header : store.products.new.header,
+			content : store.products.new.content
 		};
-	}
+	};
 
-	//Получение данных из database.json, там продукты.
+	//Получение данных из database.json, там товары. Важно помнить, что получаем мы их не сразу а JS работает ассинхронно, в результате мы получим данные после объявления переменных, соответственно переменные будут равны undefined, но можно сделать функцию в которую будут передаваться данные ответа, и уже в ней объявлять переменные.
+
 	$http.get('js/database.json').success(function (data, status, headers, config) {
-		
-		one(data);
+
+		successAnswer(data);
 
 	});
 
-			
+	
 	//Переключать валюты, связан с selectItem из app.js
-	// this.currency = {
-	// 	GBP: function () {
-	// 		return selectItem.selectItem === 1;
-	// 	},
+	$scope.currency = {
+		GBP: function () {
+			return selectItem.selectItem === 1;
+		},
 
-	// 	USD: function () {
-	// 		return selectItem.selectItem === 2;
-	// 	},
+		USD: function () {
+			return selectItem.selectItem === 2;
+		},
 
-	// 	EUR: function () {
-	// 		return selectItem.selectItem === 3;
-	// 	}
-	// };
-	
-	// element.('.row').click();
-
-// Так как JS работает ассинхронно, мы не сможем пол
-
-	
+		EUR: function () {
+			return selectItem.selectItem === 3;
+		}
+	};
 
 }]);
-	app.directive('blockName', function() { 
-		return { 
-				restrict: 'E',
-				scope: {
-					name: "=info"
-				},
-				template: '{{name.header}}'
-			};
-		});
+
+								//ДИРЕКТИВЫ
+
+app.directive('productBlock', function() {
+	return { 
+		restrict: 'E',
+		replace: true,
+		transclude: true,
+		templateUrl: 'template/productblock.html'
+	};
+})
+.directive('blockName', function() {
+	return { 
+      	require: '^productBlock',
+		restrict: 'E',
+		replace: true,
+		templateUrl: 'template/blockname.html'
+	};
+})
+.directive('content', function() {
+	return { 
+      	require: '^productBlock',
+		restrict: 'E',
+		replace: true,
+		// scope: {
+		// 	kindOfProduct: '=',
+		// 	currency: '='
+		// },
+		templateUrl: 'template/content.html'
+	};
+});
+
+
+
+
+
+
 })();
 
 // app.directive('newproducts', function () {
