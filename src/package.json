@@ -11,6 +11,7 @@
     "gulp-minify-html": "latest",
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
+    "newrelic": "latest",
     "gulp-uglify": "latest"
   }
 }

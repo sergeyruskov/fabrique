@@ -11,3 +11,16 @@
 .active-border {
 	border-color: $color-accent !important;
 }
+
+.wide-link {
+	display: block;
+	text-transform: capitalize;
+}
+
+.links-hyphenated {
+	word-wrap: break-word;
+}
+
+.under-score {
+	text-decoration: underline;
+}

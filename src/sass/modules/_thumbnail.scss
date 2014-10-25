@@ -27,6 +27,8 @@
 
 			background-color: transparent;
 			width           : em(220px);
+			height          : em(282px);
+			overflow        : hidden;
 
 		}
 
@@ -47,19 +49,21 @@
 
 				.thumbnail__product-name-and-price {
 
-					line-height   : 3.4;
 					margin        : 0;
 					letter-spacing: -.1px;
-					max-height    : em(48px);
+					height        : em(36px);
 					overflow      : hidden;
+					padding-top   : em(6px);
 
+					@extend .links-hyphenated;
 					@extend .clearfix;
 
 				}
 					.thumbnail__product-name-and-price__links--product-name {
 
-						display   : block;
-						max-width : em(168px);
+						line-height   : 1;
+						display       : block;
+						max-width     : em(220px - 48px); //thumbnail:width-thumbnail__product-name-and-price__links--price:width
 
 						@extend .pull-left;
 					}
@@ -67,7 +71,7 @@
 					.thumbnail__product-name-and-price__links--price {
 
 						display: block;
-						width  : em(53px);
+						width  : em(48px);
 
 						@extend .pull-right;
 
@@ -128,3 +132,21 @@
 						@extend .btn-primary;
 
 					}
+
+//AngularJS стили для директивы ng-repeat
+.pullRight {
+	@extend .pull-right;
+}
+
+
+.marginAuto {
+	margin: auto;
+}
+
+.pullLeft {
+
+	margin: 0;
+
+	@extend .pull-left;
+	
+}

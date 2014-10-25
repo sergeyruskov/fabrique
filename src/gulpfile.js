@@ -1,3 +1,4 @@
+require('newrelic');
 var compass = require('gulp-compass'),
     livereload = require('gulp-livereload'),
 	autoprefixer = require('gulp-autoprefixer'),
@@ -12,7 +13,7 @@ var compass = require('gulp-compass'),
     wordEnd = ".min";
 
 
-gulp.task('default', ['fonts', 'minifyAngularTemplates', 'favicon', 'watch', 'imagemin', 'compass', 'minifyHtml','scripts']);
+gulp.task('default', ['fonts', 'json', 'favicon', 'imagemin', 'compass', 'minifyHtml','scripts', 'watch']);
 
 //JS
 gulp.task('scripts', function () {
@@ -27,12 +28,6 @@ gulp.task('scripts', function () {
 });
 
 //HTML
-gulp.task('minifyAngularTemplates', function () {
-    gulp.src('js/plugins/templates/*.html')
-        .pipe(plumber()) 
-        .pipe(minifyHTML())
-        .pipe(gulp.dest(distPath + '/js/plugins/templates'));
-});
 
 gulp.task('minifyHtml', function () {
     gulp.src('index.html')
@@ -82,6 +77,13 @@ gulp.task('favicon', function () {
     .pipe(gulp.dest(distPath)); 
 });
 
+//Move json
+gulp.task('json', function () {
+    gulp.src("js/plugins/angularjs/database.json")
+    .pipe(rename(function (path) {}))
+    .pipe(gulp.dest(distPath + 'js'));
+});
+
 
 // Watch
 gulp.task('watch', function () {
@@ -93,10 +95,9 @@ gulp.task('watch', function () {
     gulp.watch('fonts/**/**', ['fonts']);
     gulp.watch('favicon.ico', ['favicon']);
     gulp.watch('images/**/**', ['imagemin']);
-    gulp.watch('js/plugins/templates/*.html', ['minifyAngularTemplates']);
+    gulp.watch('js/plugins/angularjs/database.json', ['json']);
 
-    gulp.watch(distPath + 'images/**/**').on('change', livereload.changed);
-    gulp.watch(distPath + 'js/plugins/templates/**').on('change', livereload.changed);
+    gulp.watch(distPath + 'js/plugins/angularjs/database.json').on('change', livereload.changed);
     gulp.watch(distPath + 'fonts/**/**').on('change', livereload.changed);
     gulp.watch(distPath + 'favicon.ico').on('change', livereload.changed);
     gulp.watch(distPath + 'css/fabrique' + wordEnd + '.css').on('change', livereload.changed);

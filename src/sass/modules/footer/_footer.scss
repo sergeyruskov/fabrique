@@ -1,0 +1,104 @@
+.footer {
+
+	margin-left : auto;
+	margin-right: auto;
+
+	@extend .row;
+}
+
+	.footer__element {
+
+		height  : em(166px) !important;
+		overflow: hidden;
+
+		@extend .col-md-3;
+
+	}
+
+	.footer__element--border {
+		border-left : em(2px) dotted $brand-primary;
+		padding-left: em(20px);
+
+		@extend .footer__element;
+	}
+
+	.footer__element--border--free-deliver {
+
+		padding-bottom: em(38px);
+		position      : relative;
+
+		@extend .footer__element--border;
+
+	}
+
+		.important-info {
+
+			line-height   : 1;
+			padding-bottom: em(10px);
+
+		}
+
+		.footer__contacts-paragraph {
+
+			width         : em(185px);
+
+			padding-bottom: em(15px);
+
+		}
+
+		.big-header {
+
+			margin-top: em(-2px);
+			font-size : em(27px);
+			color     : $black;
+
+		}
+
+		.highlight {
+
+			color      : $footer-price-color;
+			line-height: 3;
+			@extend    .show;
+
+		}
+
+		.payment-system {
+
+			position: absolute;
+
+			bottom  : 0;
+
+		}
+
+			.paypal,
+			.visa,
+			.mastercard,
+			.discover {
+
+				width  		: em(42px);
+				height 		: em(27px);
+				margin-left : em(10px);
+
+				display: inline-block;
+
+			}
+
+			.paypal {
+
+				margin-left: 0 !important;
+
+				@extend .my-icons-paypal;
+
+			}
+
+			.visa {
+				@extend .my-icons-visa;
+			}
+
+			.mastercard {
+				@extend .my-icons-Mastercard;
+			}
+
+			.discover {
+				@extend .my-icons-Discover;
+			}

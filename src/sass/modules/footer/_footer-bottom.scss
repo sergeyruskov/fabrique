@@ -1,0 +1,36 @@
+.footer-bottom {
+
+	padding-top: em(50px);
+	@extend .container;
+
+}
+
+	.copyright {
+
+		@extend .col-lg-2;
+
+	}
+
+	.social-networks {
+
+		@extend .col-lg-offset-9;
+		@extend .col-lg-1;
+
+	}
+
+		.copyright__header {
+
+			
+			margin     : 0;
+
+			&__link {
+
+				&:hover {
+
+					@extend %hover;
+
+				}
+
+			}
+
+		}

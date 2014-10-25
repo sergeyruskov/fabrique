@@ -48,9 +48,9 @@
 			<div class="basket-wrapper">
 
 				<div class="basket">
-					<button type="button" class="basket__button" data-ng-class="{'active-border':basket.borderColor}">
+					<button type="button" class="basket__button" data-ng-class="{'active-border':borderColor}">
 
-					  <span class="basket__button__icon" data-ng-class="{'active-link':basket.linkColor}"></span> 
+					  <span class="basket__button__icon" data-ng-class="{'active-link':linkColor}"></span> 
 					
 					</button>
 					
@@ -67,7 +67,7 @@
 						<div class="basket-items">
 
 							<span class="basket__number-items"></span>
-							<a href="#" class="active-link">{{basket.numberOfItems}}</a><span>{{" " + basket.itemString}}</span>
+							<a href="#" class="active-link">{{numberOfItems}}</a><span>{{" " + itemString}}</span>
 						
 						</div>
 						
@@ -124,7 +124,7 @@
         				<button type="submit" class="form-btn-inside__submit-button">
         					<span class="form-btn-inside__icon"></span>
         				</button>
-					</form>						
+					</form>
 
 			    </div>
 			</div>
@@ -161,121 +161,94 @@
 				</form>
 			</aside>
 		</div>
-<!-- AngularJS directives --><!-- info="newprblock" info="new" -->
-		<product-block info="new">
-			<block-name>{{new.header}}</block-name>
-			<content kind-of-product="new" currency="currency"></content>
+		<!-- AngularJS вместо значения агрумента kind-of-block пишем название нужного блока товара из database.json, так же нужно добавить в контроллер contentController, новую ссылку на внесенные товары -->
+		<product-block>
+			<block-name kind-of-product="new"></block-name>
+			<content kind-of-product="new" currency="currency" add-item="addItem"></content>
 		</product-block>
-		 <!-- kind-of-product="new" -->
-		<!-- AngularJS directives end -->
-		<div class="row">
-		  <h3 class="important-info">Featured products</h3>
-		  <div class="col-sm-3 col-md-3">
-		    <div class="thumbnail">
-		      <img src="images/featured-products/img1.jpg" height="130" width="241" alt="Royale Curtains">
-		      <div class="caption">
-		        <h4>Royale curtains <span class="pull-right">&#163;159.99</span></h4>
-		        <p>A range of colours compliment what have to be the thickest curtains we have ever seen. As soft as velvet and available in a range of sizes.</p>
-		        <p>
-			        <a href="#" class="btn btn-primary" role="button">View</a> 
-			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-		        </p>
-		      </div>
-		    </div>
-		  </div>
-		  
-		  <div class="col-sm-3 col-md-3">
-		    <div class="thumbnail">
-		      <img src="images/featured-products/img2.jpg" height="130" width="241" alt="Claire Aitch Zebra Rug ">
-		      <div class="caption">
-		        <h4>Claire Aitch Zebra Rug  <span class="pull-right">&#163;129.99</span></h4>
-		        <p>Contemporary, 3 inch deep sheeps wool rug by designer Claire Aitch. Hessian backed for extra long life and stain resistant.</p>
-		        <p>
-			        <a href="#" class="btn btn-primary" role="button">View</a> 
-			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-		        </p>
-		      </div>
-		    </div>
-		  </div>
-		  	  
-		  <div class="col-sm-3 col-md-3">
-		    <div class="thumbnail">
-		      <img src="images/featured-products/img3.jpg" height="130" width="241" alt="Real Pine Wood Flooring">
-		      <div class="caption">
-		        <h4>Real pine wood flooring <span class="pull-right">&#163;19.99</span></h4>
-		        <p>Save 50% on this real English Pine wood flooring while stocks last. Was £39.98 now £19.99 per square metre. </p>
-		        <p>
-			        <a href="#" class="btn btn-primary" role="button">View</a> 
-			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-		        </p>
-		      </div>
-		    </div>
-		  </div>
-		  	  
-		<div class="col-sm-3 col-md-3">
-			<div class="thumbnail">
-			  <img src="images/featured-products/img4.jpg" height="130" width="241" alt="Modern Flowers Bed Set">
-			  <div class="caption">
-			    <h4>Modern flowers bed set <span class="pull-right">&#163;89.99</span></h4>
-			    <p>Wrap yourself in the true epitome of luxurious 100% cotton towels and linen by the respected UK designer Claire Aitch.</p>
-			    <p>
-			        <a href="#" class="btn btn-primary" role="button">View</a> 
-			        <a href="#" class="btn btn-default" role="button">Add to basket</a>
-			    </p>
-			  </div>
-			</div>
-		</div>
-		
+		<product-block>
+			<block-name kind-of-product="feature"></block-name>
+			<content kind-of-product="feature" currency="currency" add-item="addItem"></content>
+		</product-block>
+		<!-- AngularJS end -->
 	</div>
-	
+
 	<footer class="footer">
-
-		<section class="footer__element">
-			<h3 class="important-info">Information</h3>
-			<a href="#" class="wide-link">Contact us</a>
-			<a href="#" class="wide-link">Delivery</a>
-			<a href="#" class="wide-link">Returns</a>
-			<a href="#" class="wide-link">Terms and conditions</a>
-			<a href="#" class="wide-link">Privacy policy</a>
-			<a href="#" class="wide-link">About us</a>
-		</section>
-
-		<section class="footer__element">
-			<h3 class="important-info">Your account</h3>
-			<a href="#" class="wide-link">log in</a>
-			<a href="#" class="wide-link">Delivery</a>
-			<a href="#" class="wide-link">Returns</a>
-			<a href="#" class="wide-link">Terms and conditions</a>
-			<a href="#" class="wide-link">Privacy policy</a>
-			<a href="#" class="wide-link">About us</a>
-		</section>
-
-		<section class="footer__element">
-			<h3 class="important-info">Contacts</h3>
-			<p class="footer__contacts-paragraph">Fabrique Fine Furnishing 308-310 Somewhere Road, Devon,  PL9 1DD.</p>
-			<p class="footer__contacts-paragraph">Telephone: +44 01752 000000<br> E-mail: mail@yoursite.com</p>
-		</section>
-
-		<section class="footer__element">
-			<h3 class="big-header">Free delivery!</h3>
-			<span class="highlight">On all orders over &#128;99.99</span>
-			<span>Valid on all of our stocked items</span>
-			<a href="#" class="paypal"></a>
-			<a href="#" class="visa"></a>
-			<a href="#" class="mastercard"></a>
-			<a href="#" class="paypal"></a>
-		</section>
+		<div class="row">
+			<section class="footer__element">
+				<h3 class="important-info">Information</h3>
+				<a href="#" class="wide-link">Contact us</a>
+				<a href="#" class="wide-link">Delivery</a>
+				<a href="#" class="wide-link">Returns</a>
+				<a href="#" class="wide-link">Terms and conditions</a>
+				<a href="#" class="wide-link">Privacy policy</a>
+				<a href="#" class="wide-link">About us</a>
+			</section>
+	
+			<section class="footer__element--border">
+				<h3 class="important-info">Your account</h3>
+				<a href="#" class="wide-link">log in</a>
+				<a href="#" class="wide-link">Delivery</a>
+				<a href="#" class="wide-link">Returns</a>
+				<a href="#" class="wide-link">Terms and conditions</a>
+				<a href="#" class="wide-link">Privacy policy</a>
+				<a href="#" class="wide-link">About us</a>
+			</section>
+	
+			<section class="footer__element--border">
+				<h3 class="important-info">Contacts</h3>
+				<p class="footer__contacts-paragraph">Fabrique Fine Furnishing 308-310 Somewhere Road, Devon,  PL9 1DD.</p>
+				<p class="footer__contacts-paragraph">Telephone: +44 01752 000000<br> E-mail: <a href=# class="under-score">mail@yoursite.com</a></p>
+			</section>
+	
+			<section class="footer__element--border--free-deliver">
+				<h3 class="big-header">Free delivery!</h3>
+				<span class="highlight">On all orders over &#128;99.99</span>
+				<span>Valid on all of our stocked items</span>
+				<div class="payment-system">
+					<a href="#" class="paypal"></a>
+					<a href="#" class="visa"></a>
+					<a href="#" class="mastercard"></a>
+					<a href="#" class="discover"></a>
+				</div>
+			</section>
+		</div>
 
 	</footer>
 
-	<div class="copyright">
-		<span class="copyright__header"></span><br>
+	<div class="footer-bottom">
+
+<div class="row">
+
+  <div class="copyright">
+
+		<h3 class="copyright__header"><a href="#" class="copyright__header__link">Fabrique</a></h3>
+		<span class="copyright__subtitle">fine furnishings</span><br>
 		<span>&copy; 2012 all right reserved</span>
+
 	</div>
 
-	<div class="social-networks">
-		<a href="#"></a>
-		<a href="#"></a>
+		<div class="social-networks">
+
+			<a href="#">aaaaaaaa</a>
+			<a href="#">aaaaaaaaa</a>
+
+		</div>
+</div>
+
+<!-- 		<div class="row">
+		
+			<div class="copyright">
+				<span class="copyright__header"></span><br>
+				<span>&copy; 2012 all right reserved</span>
+			</div>
+
+			<div class="social-networks">
+				<a href="#">aaaaaaaa</a>
+				<a href="#">aaaaaaaaa</a>
+			</div>
+			
+		</div> -->
 	</div>
 
 	<!-- Заменить на локальный angular -->

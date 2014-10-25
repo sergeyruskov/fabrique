@@ -40,27 +40,25 @@ app.controller('activeMainMenuCtrl',function () {
 
 //Basket
 
-app.controller('basketCtrl',function () {
+app.controller('basketCtrl',["selectItem","$scope", "$rootScope", function (selectItem, $scope, $rootScope) {
+	$scope.itemString = 'item';
+	$scope.borderColor = false;
+	$scope.linkColor = false; 
 
-	this.numberOfItems = 0;
-	this.itemString = 'item';
-	this.borderColor = false;
-	this.linkColor = false;
+	$rootScope.numberOfItems = 0;
+	$rootScope.basketCount = function (items) {
+		if (items >= 0) { 
+			$scope.borderColor = true;
+			$scope.linkColor = true;
 
-	this.addItem = function() {
-		this.numberOfItems++;
-
-		if (this.numberOfItems > 0) {
-
-			this.borderColor = true;
-			this.linkColor = true;
-
-			if (this.numberOfItems > 1) {
-				this.itemString = 'items';
+			if (items >= 1) {
+				$scope.itemString = 'items';
 			}
 		}
 	};
-});
+
+
+}]);
 
 app.controller('emailValidationCtrl', function(){
 	this.emailSubmit = function  (emailValidBoolead){

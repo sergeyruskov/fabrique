@@ -90,7 +90,6 @@
 		padding-left: em(14px);
 
 		@extend .col-lg-3;
-		//JS in da house
 
 	}
 
@@ -134,6 +133,7 @@
 
 					&__link {
 
+						@extend .links-hyphenated;
 						word-wrap : break-word;
 						@extend   .active-link;
 
@@ -142,7 +142,6 @@
 				&__number-items {
 
 					@extend .active-link;
-					//JS in da house
 
 				}
 		}
