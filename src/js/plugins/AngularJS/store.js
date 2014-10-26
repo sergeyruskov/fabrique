@@ -2,17 +2,17 @@
 
 var app = angular.module('thumbnail', ["template/productblock.html", "template/blockname.html", "template/content.html"]);
 
-app.controller('contentController',['selectItem','$scope','$http', "$rootScope", function (selectItem, $scope, $http, $rootScope) {
+app.controller('contentController',['selectItem','$scope','$http', "$rootScope", function (selectItem, $scope, $http, $rootScope){
 
 	successAnswer = function (data) {
-		store = data;
+		$scope.store = data;
 		$scope.new = {
-			header  : store.products.new.header,
-			content : store.products.new.content
+			header  : $scope.store.products.new.header,
+			content : $scope.store.products.new.content
 		};
 		$scope.feature = {
-			header  : store.products.feature.header,
-			content : store.products.feature.content
+			header  : $scope.store.products.feature.header,
+			content : $scope.store.products.feature.content
 		};
 	};
 

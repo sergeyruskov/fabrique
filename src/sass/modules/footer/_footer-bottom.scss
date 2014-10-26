@@ -1,7 +1,8 @@
 .footer-bottom {
 
-	padding-top: em(50px);
-	@extend .container;
+	padding     : em(40px);
+
+	@extend     .container;
 
 }
 
@@ -9,21 +10,13 @@
 
 		@extend .col-lg-2;
 
-	}
+		&__header {
 
-	.social-networks {
-
-		@extend .col-lg-offset-9;
-		@extend .col-lg-1;
-
-	}
-
-		.copyright__header {
-
-			
 			margin     : 0;
 
 			&__link {
+
+				color      : $black;
 
 				&:hover {
 
@@ -34,3 +27,50 @@
 			}
 
 		}
+
+		&__subtitle {
+
+			text-transform: uppercase;
+
+		}
+	}
+
+	.social-networks-wrapper{
+
+		@extend .col-lg-offset-9;
+		@extend .col-lg-1;
+
+	}
+
+		.social-networks {
+
+			border: em(2px) solid #ccc;
+
+			background: linear-gradient(#fff, rgba(180, 152, 144, 0.2));
+
+			&__facebook,
+			&__twitter {
+
+				width       : em(23px);
+				height      : em(23px);
+				display     : inline-block;
+
+				margin: em(4px) em(4px) 0 em(6px);
+
+			}
+
+			&__facebook {
+
+				@extend .my-icons-FaceBook;
+
+			}
+
+			&__twitter {
+
+				@extend .my-icons-Twitter
+
+			}
+
+		}
+
+

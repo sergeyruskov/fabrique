@@ -98,8 +98,6 @@ gulp.task('watch', function () {
     gulp.watch('js/plugins/angularjs/database.json', ['json']);
 
     gulp.watch(distPath + 'js/plugins/angularjs/database.json').on('change', livereload.changed);
-    gulp.watch(distPath + 'fonts/**/**').on('change', livereload.changed);
-    gulp.watch(distPath + 'favicon.ico').on('change', livereload.changed);
     gulp.watch(distPath + 'css/fabrique' + wordEnd + '.css').on('change', livereload.changed);
     gulp.watch(distPath + 'index.html').on('change', livereload.changed);
     gulp.watch(distPath + 'js/script' + wordEnd + '.js').on('change', livereload.changed);

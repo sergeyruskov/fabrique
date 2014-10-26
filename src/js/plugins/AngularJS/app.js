@@ -43,7 +43,8 @@ app.controller('activeMainMenuCtrl',function () {
 app.controller('basketCtrl',["selectItem","$scope", "$rootScope", function (selectItem, $scope, $rootScope) {
 	$scope.itemString = 'item';
 	$scope.borderColor = false;
-	$scope.linkColor = false; 
+	$scope.linkColor = false;
+
 
 	$rootScope.numberOfItems = 0;
 	$rootScope.basketCount = function (items) {
@@ -51,20 +52,21 @@ app.controller('basketCtrl',["selectItem","$scope", "$rootScope", function (sele
 			$scope.borderColor = true;
 			$scope.linkColor = true;
 
-			if (items >= 1) {
-				$scope.itemString = 'items';
-			}
+			if (items >= 1) $scope.itemString = 'items';
 		}
+	};
+
+//ЗАКОНЧИЛ ТУТ
+	$scope.www = function () {
+		return $rootScope.numberOfItems === 0;
 	};
 
 
 }]);
 
 app.controller('emailValidationCtrl', function(){
-	this.emailSubmit = function  (emailValidBoolead){
-		if(emailValidBoolead === true){
-			alert("I'll remember");
-		}
+	this.emailSubmit = function  (emailValidBoolean){
+		emailValidBoolean = alert("I'll remember");
 	};
 
 });
