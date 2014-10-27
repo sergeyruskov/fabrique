@@ -26,7 +26,6 @@
 			background-color: transparent;
 			width           : em(220px);
 			height          : em(282px);
-			overflow        : hidden;
 
 		}
 
@@ -122,8 +121,13 @@
 						&:hover {
 
 							color       : $black;
-							border-color: $btn-border-color-hover;
+							border-color: $color-accent;
 
+						}
+
+						&:active {
+							background: $color-accent;
+							color     : #fff;
 						}
 
 						@extend .btn;
@@ -148,3 +152,5 @@
 	@extend .pull-left;
 	
 }
+
+

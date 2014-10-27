@@ -28,6 +28,16 @@ li.open>a {
 
 .form-btn-inside {
 
+	@media (max-width: em(1040px, 16px)) {
+
+		margin-left: em(20px);
+		float      : left !important;
+		
+		&__input {
+			width      : em(180px) !important;
+		}
+	}
+
 	@extend %form;
 
 	&__input {

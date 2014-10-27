@@ -1,10 +1,11 @@
+'use strict';
 (function () {
 
 var app = angular.module('thumbnail', ["template/productblock.html", "template/blockname.html", "template/content.html"]);
 
-app.controller('contentController',['selectItem','$scope','$http', "$rootScope", function (selectItem, $scope, $http, $rootScope){
+app.controller('contentController',["$scope","$http", "$rootScope", function ($scope, $http, $rootScope){
 
-	successAnswer = function (data) {
+	$scope.successAnswer = function (data) {
 		$scope.store = data;
 		$scope.new = {
 			header  : $scope.store.products.new.header,
@@ -26,25 +27,28 @@ app.controller('contentController',['selectItem','$scope','$http', "$rootScope",
 
 	$http.get('js/database.json').success(function (data) {
 
-		successAnswer(data);
+		$scope.successAnswer(data);
 
 	});
+
 
 	
 	//Переключать валюты, связан с selectItem из app.js
 	$scope.currency = {
 		GBP: function () {
-			return selectItem.selectItem === 1;
+			return $rootScope.currency === 1;
 		},
 
 		USD: function () {
-			return selectItem.selectItem === 2;
+			return $rootScope.currency === 2;
 		},
 
 		EUR: function () {
-			return selectItem.selectItem === 3;
+			return $rootScope.currency === 3;
 		}
 	};
+
+	$rootScope.rootCurrency = $scope.currency;
 
 }]);
 

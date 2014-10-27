@@ -1,25 +1,20 @@
+'use strict';
 (function(){
 
 var app = angular.module('app',['ui.bootstrap','customBootstrap','ngSanitize', 'thumbnail']);
 
-//Connector between activeCurrencyCtrl and store
-app.service('selectItem',function(){
-    this.selectItem = 1;
-});
-
-
 //Currency active link
-app.controller('activeCurrencyCtrl',['selectItem',function (selectItem) {
+app.controller('activeCurrencyCtrl',["$rootScope", function ($rootScope) {
+
+	$rootScope.currency = 1;
 
 	this.setTrigger = function(activeCurrency){
-		selectItem.selectItem = activeCurrency;
+		$rootScope.currency = activeCurrency;
 	};
 
-    this.activeClass = function(activeClass){
-		return selectItem.selectItem === activeClass;
+	this.activeClass = function(activeClass){
+		return $rootScope.currency === activeClass;
 	};
-
-
 
 }]);
 
@@ -40,7 +35,7 @@ app.controller('activeMainMenuCtrl',function () {
 
 //Basket
 
-app.controller('basketCtrl',["selectItem","$scope", "$rootScope", function (selectItem, $scope, $rootScope) {
+app.controller('basketCtrl',["$scope", "$rootScope", function ($scope, $rootScope) {
 	$scope.itemString = 'item';
 	$scope.borderColor = false;
 	$scope.linkColor = false;
@@ -48,20 +43,13 @@ app.controller('basketCtrl',["selectItem","$scope", "$rootScope", function (sele
 
 	$rootScope.numberOfItems = 0;
 	$rootScope.basketCount = function (items) {
-		if (items >= 0) { 
+		if (items >= 0) {
 			$scope.borderColor = true;
 			$scope.linkColor = true;
 
 			if (items >= 1) $scope.itemString = 'items';
 		}
 	};
-
-//ЗАКОНЧИЛ ТУТ
-	$scope.www = function () {
-		return $rootScope.numberOfItems === 0;
-	};
-
-
 }]);
 
 app.controller('emailValidationCtrl', function(){

@@ -19,6 +19,10 @@ body {
 	background : rgba(255, 255, 255, .8);
 
 	@extend .container;
+
+	@media (max-width: em(1040px, 16px)) {
+		padding: em(40px) 0 em(40px);
+	}
 	
 }
 

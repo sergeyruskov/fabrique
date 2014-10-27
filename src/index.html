@@ -204,9 +204,9 @@
 			<section class="footer__element--border--free-deliver">
 				<h3 class="big-header">Free delivery!</h3>
 				<span class="highlight">On all orders over 
-				<span data-ng-show="www()">{{99.99 | currency : '&#163;'}}</span>
-				<span data-ng-show="currency.USD()">{{99.99 * 1.61722 | currency : '$'}}</span>
-				<span data-ng-show="currency.EUR()">{{99.99 * 1.26226975 | currency : '&#128;'}}</span>
+				<span data-ng-show="rootCurrency.GBP()">{{99.99 | currency : '&#163;'}}</span>
+				<span data-ng-show="rootCurrency.USD()">{{99.99 * 1.61722 | currency : '$'}}</span>
+				<span data-ng-show="rootCurrency.EUR()">{{99.99 * 1.26226975 | currency : '&#128;'}}</span>
 				</span>
 				<span>Valid on all of our stocked items</span>
 				<div class="payment-system">

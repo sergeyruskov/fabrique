@@ -35,11 +35,3 @@ angular.module("template/content.html", []).run(["$templateCache", function ($te
 		"</div>"
 	);
 }]);
-
-
-
-// angular.module("template/www.html", []).run(["$templateCache", function ($templateCache) {
-// 	$templateCache.put("template/www.html",
-// 		"<h3 class=\"important-info\" ng-transclude>{{person.name}}</h3>"
-// 	);
-// }]);
