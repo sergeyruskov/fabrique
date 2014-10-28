@@ -133,8 +133,8 @@
 	<div class="content" data-ng-controller="contentController as contentCtrl">
 
 		<div class="slider-and-sale">
-			<div class="col-sm-9 col-md-9">
-				<div data-ng-controller="carouselCtrl as carousel">
+			<div class="slider-wrapper">
+				<div data-ng-controller="carouselCtrl as carousel" class="slider">
 				    <carousel interval="myInterval">
 				      <slide data-ng-repeat="slide in carousel.slides" active="slide.active">
 				        <img alt="{{slide.alt}}" data-ng-src="{{slide.image}}" class="img-responsive" height="370" width="700">
@@ -175,7 +175,7 @@
 
 	<footer class="footer">
 		<div class="row">
-			<section class="footer__element">
+			<section class="footer__element--information">
 				<h3 class="important-info">Information</h3>
 				<a href="#" class="wide-link">Contact us</a>
 				<a href="#" class="wide-link">Delivery</a>
@@ -185,7 +185,7 @@
 				<a href="#" class="wide-link">About us</a>
 			</section>
 	
-			<section class="footer__element--border">
+			<section class="footer__element--your-account">
 				<h3 class="important-info">Your account</h3>
 				<a href="#" class="wide-link">log in</a>
 				<a href="#" class="wide-link">Delivery</a>
@@ -195,7 +195,7 @@
 				<a href="#" class="wide-link">About us</a>
 			</section>
 	
-			<section class="footer__element--border">
+			<section class="footer__element--contacts">
 				<h3 class="important-info">Contacts</h3>
 				<p class="footer__contacts-paragraph">Fabrique Fine Furnishing 308-310 Somewhere Road, Devon,  PL9 1DD.</p>
 				<p class="footer__contacts-paragraph">Telephone: +44 01752 000000<br> E-mail: <a href=# class="under-score">mail@yoursite.com</a></p>
@@ -209,11 +209,11 @@
 				<span data-ng-show="rootCurrency.EUR()">{{99.99 * 1.26226975 | currency : '&#128;'}}</span>
 				</span>
 				<span>Valid on all of our stocked items</span>
-				<div class="payment-system">
-					<a href="#" class="paypal"></a>
-					<a href="#" class="visa"></a>
-					<a href="#" class="mastercard"></a>
-					<a href="#" class="discover"></a>
+				<div class="payment-system-wrapper">
+					<a href="#" class="payment-system--paypal"></a>
+					<a href="#" class="payment-system--visa"></a>
+					<a href="#" class="payment-system--mastercard"></a>
+					<a href="#" class="payment-system--discover"></a>
 				</div>
 			</section>
 		</div>

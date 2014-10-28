@@ -2,8 +2,12 @@
 
 	padding       : em(25px) 0 em(60px);
 	border-bottom : em(2px) dotted $brand-primary;
-	height        : em(425px);
-	overflow      : hidden; 
+	overflow      : hidden;
+
+	@media (max-width: em($screen-md-rules, 16px)) {
+
+		padding-bottom: em(20px);
+	}
 
 	@extend .row;
 }
@@ -12,137 +16,195 @@
 
 		line-height: 2.95;
 		margin     : 0;
+		font-size: em(24px);
 		font-family: $font-family--secondary;
 
-	}
-	
-		.thumbnail {
+		@media (max-width: em($screen-md-rules, 16px)) {
 
-			border          : 0;
-
-			padding         : 0;
-			margin          : 0;
-
-			background-color: transparent;
-			width           : em(220px);
-			height          : em(282px);
+			text-align    : center;
+			padding-bottom: em(20px);
 
 		}
 
-			.thumbnail__img {
+	}
+		
+		.thumbnail-wrapper-product {
 
-				height      : em(130px);
-				margin      : 0;
+			@extend .col-lg-3;
+			@extend .col-md-6;
 
-				@extend     .img-responsive;
+			@media (max-width: em($screen-md-rules, 16px)) {
 
+				padding-bottom: em(50px);
 			}
 
-			.caption {
+		}
 
-				padding: 0 !important;
-					
-			}
+			.thumbnail {
 
-				.thumbnail__product-name-and-price {
+				border          : 0;
 
-					margin        : 0;
-					letter-spacing: em(-0.1px);
-					height        : em(36px);
-					overflow      : hidden;
-					padding-top   : em(6px);
+				padding         : 0;
+				margin          : 0;
 
-					@extend .links-hyphenated;
-					@extend .clearfix;
+				background-color: transparent;
+				width           : em(220px);
+				height          : em(282px);
+
+				@media (max-width: em($screen-md-rules, 16px)) {
+
+					width        : auto;
+					max-height   : em(340px) !important;
 
 				}
-					.thumbnail__product-name-and-price__links--product-name {
 
-						line-height   : 1;
-						display       : block;
-						max-width     : em(220px - 52px); //thumbnail:width-thumbnail__product-name-and-price__links--price:width
+			}
 
-						@extend .pull-left;
+				.thumbnail__img {
+
+					height      : em(130px);
+					margin      : 0;
+
+					@extend     .img-responsive;
+
+					@media (max-width: em($screen-md-rules, 16px)) {
+
+						width : 80% !important;
+						height: 60% !important;
+
 					}
-					
-					.thumbnail__product-name-and-price__links--price {
 
-						display: block;
-						width  : em(52px);
+				}
 
-						@extend .pull-right;
+				.caption {
 
-					}
-					
-					.thumbnail__product-name-and-price__links--price,
-					.thumbnail__product-name-and-price__links--product-name { 
+					padding: 0 !important;
 
-						color         : $color-accent;
-						text-transform: capitalize;
+				}
 
-						&:hover {
+					.thumbnail__product-name-and-price {
 
-							text-decoration: none;
-							color          : $color-accent-hover
+						margin        : 0;
+						letter-spacing: em(-0.1px);
+						height        : em(36px);
+						overflow      : hidden;
+						padding-top   : em(6px);
+
+						@extend .links-hyphenated;
+						@extend .clearfix;
+
+						@media (max-width: em($screen-md-rules, 16px)) {
+
+							width : 80%;
+							margin: auto;
 
 						}
+
 					}
+						.thumbnail__product-name-and-price__links--product-name {
 
+							line-height   : 1;
+							display       : block;
+							max-width     : em(220px - 52px); //thumbnai:width-thumbnail__product-name-and-price__links--price:width
 
-				.thumbnail__text {
-
-					height       : em(71px);
-					overflow     : hidden;
-					line-height  : 1.3;
-					margin-bottom: em(20px);
-
-				}
-
-				.thumbnail__button-group {
-
-					margin: 0;
-
-				}
-
-					.thumbnail__buttons {
-
-						background-image: image-url('slider/preview_bg.jpg');
-
-						color           : $black;
-						text-transform  : capitalize;
-						font-family     : $font-family--secondary;
-
-						border-radius   : 0;
-						border-color    : $btn-border-color;
-
-						margin-right    : em(16px);
-						padding         : em(1px) em(6px);
+							@extend .pull-left;
+						}
 						
-						&:hover {
+						.thumbnail__product-name-and-price__links--price {
 
-							color       : $black;
-							border-color: $color-accent;
+							display: block;
+							width  : em(52px);
+
+							@extend .pull-right;
 
 						}
+						
+						.thumbnail__product-name-and-price__links--price,
+						.thumbnail__product-name-and-price__links--product-name { 
 
-						&:active {
-							background: $color-accent;
-							color     : #fff;
+							color         : $color-accent;
+							text-transform: capitalize;
+
+							&:hover {
+
+								text-decoration: none;
+								color          : $color-accent-hover
+
+							}
 						}
 
-						@extend .btn;
-						@extend .btn-primary;
 
+					.thumbnail__text {
+
+						height       : em(71px);
+						overflow     : hidden;
+						line-height  : 1.3;
+						margin-bottom: em(20px);
+
+						@media (max-width: em($screen-md-rules, 16px)) {
+
+							width : 80%;
+							margin: auto;
+
+						}
 					}
+
+					.thumbnail__button-group {
+
+						margin: 0;
+
+						@media (max-width: em($screen-md-rules, 16px)) {
+
+							width : 80%;
+							margin: auto;
+
+						}
+					}
+
+						.thumbnail__buttons {
+							background-image: image-url('slider/preview_bg.jpg');
+
+							color           : $black;
+							text-transform  : capitalize;
+							font-family     : $font-family--secondary;
+
+							border-radius   : 0;
+							border-color    : $btn-border-color;
+
+							margin-right    : em(16px);
+							padding         : em(1px) em(6px);
+							
+							&:hover {
+
+								color       : $black;
+								border-color: $color-accent;
+
+							}
+
+							&:active {
+								background: $color-accent;
+								color     : #fff;
+							}
+
+							@extend .btn;
+							@extend .btn-primary;
+							@media (max-width: em($screen-md-rules, 16px)) {
+								width: 43% !important;
+							}
+						}
 
 //AngularJS стили для директивы ng-repeat
 .pullRight {
+
 	@extend .pull-right;
+
 }
 
 
 .marginAuto {
+
 	margin: auto;
+
 }
 
 .pullLeft {
@@ -150,7 +212,18 @@
 	margin: 0;
 
 	@extend .pull-left;
-	
+
 }
 
+.pullLeft,
+.pullRight,
+.marginAuto {
 
+	@media (max-width: em($screen-md-rules, 16px)) {
+
+		float: none !important;
+		margin: auto;
+
+	}
+
+}

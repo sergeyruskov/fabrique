@@ -71,9 +71,12 @@ $header-blocks-indent    : 3.5714285714285716em;
 
 // ==========================================================================
 
-// $screen-size            : 16.666666666666668em;
+// $screen-size            : 1em;
 // $screen-xs              : $screen-size;
 // $screen-xs-min          : $screen-size;
 // $screen-sm              : $screen-size;
-$screen-md              : 40em;
-$screen-lg              : 65em;
+
+$screen-md              : 200px;
+$screen-md-rules        : 1040px;
+
+$screen-lg              : 1040px;

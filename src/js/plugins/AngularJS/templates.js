@@ -13,7 +13,7 @@ angular.module("template/blockname.html", []).run(["$templateCache", function ($
 
 angular.module("template/content.html", []).run(["$templateCache", function ($templateCache) {
 	$templateCache.put("template/content.html",
-		"<div  class=\"col-sm-3\" data-ng-repeat=\"thumbnail in kindOfProduct.content\">\n" +
+		"<div  class=\"thumbnail-wrapper-product\" data-ng-repeat=\"thumbnail in kindOfProduct.content\">\n" +
 		"	<div class=\"thumbnail\" ng-class=\"{pullRight:$last, marginAuto:$middle, pullLeft:$index % 4 === 0 }\">\n" +
 		"		<a href=\"#\"><img class=\"thumbnail__img\" data-ng-src=\"{{thumbnail.image}}\" style=\"height:130px;width:220px\" alt=\"Clare Aitch Bath Sheets\"></a>\n" +
 		"		<div class=\"caption\">\n" +

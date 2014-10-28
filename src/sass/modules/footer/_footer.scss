@@ -6,29 +6,51 @@
 	@extend .row;
 }
 
-	.footer__element {
+	.footer__element--information {
 
 		height  : em(166px) !important;
 		overflow: hidden;
 
-		@extend .col-md-3;
+		@extend .col-lg-3;
+		@extend .col-md-6;
+
+		@media (max-width: em($screen-md-rules, 16px)) {
+			border: 0;
+			text-align: center;
+			height  : em(176px) !important;
+		}
 
 	}
 
-	.footer__element--border {
+	.footer__element--contacts,
+	.footer__element--your-account {
 		border-left : em(2px) dotted $brand-primary;
 		padding-left: em(20px);
 
-		@extend .footer__element;
+		@extend .footer__element--information;
+	}
+
+	.footer__element--contacts {
+
+		@media (max-width: em($screen-md-rules, 16px)) {
+			padding-top: em(10px);
+			border-left: 0;
+			border-top : em(2px) dotted $brand-primary;
+		}
 	}
 
 	.footer__element--border--free-deliver {
 
-		padding-bottom: em(38px);
+
+		padding       : em(10px) 0 em(38px);
 		position      : relative;
 
-		@extend .footer__element--border;
+		@extend .footer__element--your-account;
 
+		
+		@media (max-width: em($screen-md-rules, 16px)) {
+			border-top : em(2px) dotted $brand-primary;
+		}
 	}
 
 		.important-info {
@@ -43,6 +65,7 @@
 			width         : em(185px);
 
 			padding-bottom: em(15px);
+			margin        : auto;
 
 		}
 
@@ -62,43 +85,48 @@
 
 		}
 
-		.payment-system {
+		.payment-system-wrapper {
 
 			position: absolute;
 
 			bottom  : 0;
+			@media (max-width: em($screen-md-rules, 16px)) {
+				position   : static;
+				margin     : auto;
+				padding-top: em(25px);
+			}
 
 		}
 
-			.paypal,
-			.visa,
-			.mastercard,
-			.discover {
+			
+			%payment-system {
 
 				width  		: em(42px);
 				height 		: em(27px);
 				margin-left : em(10px);
 
 				display: inline-block;
-
 			}
 
-			.paypal {
+			.payment-system--paypal {
 
 				margin-left: 0 !important;
 
 				@extend .my-icons-paypal;
-
+				@extend %payment-system;
 			}
 
-			.visa {
+			.payment-system--visa {
 				@extend .my-icons-visa;
+				@extend %payment-system;
 			}
 
-			.mastercard {
+			.payment-system--mastercard {
 				@extend .my-icons-Mastercard;
+				@extend %payment-system;
 			}
 
-			.discover {
+			.payment-system--discover {
 				@extend .my-icons-Discover;
+				@extend %payment-system;
 			}

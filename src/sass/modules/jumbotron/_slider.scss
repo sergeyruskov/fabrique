@@ -1,54 +1,69 @@
-.slider__content-block {
+.slider-wrapper {
 
-	top       : 0;
-	left      : 0;
-
-	padding   : em(20px) 0 0 em(40px); 
-
-	@extend   .carousel-caption;
-
+	@extend .col-lg-9;
+	@extend .col-md-12;
+	
 }
 
-	.slider__content-block__header {
+	.slider {
 
-		text-transform: uppercase;
-		color         : $white;
+		@media (max-width: em($screen-md-rules, 16px)) {
 
-		width         : em(240px, 24px);
+			margin: auto;
+			width: 75%;
 
-		line-height   : 3.1;
-		
-	}
-
-	.slider__content-block__paragraph {
-
-		width       : em(185px);
-
-	}
-	
-	.slider__content-block__preview {
-
-		width           : em(75px);
-
-		font-size       : em(15px);
-		font-family     : $font-family--secondary;
-		color           : $black;
-		font-weight     : $font-weight--bold;
-
-		border-radius   : 0;
-		background      : image-url('slider/preview_bg.jpg');
-
-		@extend .btn;
-		@extend .btn-default;
-		@extend .show;
+		}
 
 	}
 
-	//AngularJS
-	.ng-binding {
+		.slider__content-block {
 
-		text-align  : left !important;
+			top       : 0;
+			left      : 0;
 
-	}
+			padding   : em(20px) 0 0 em(40px); 
 
+			@extend   .carousel-caption;
 
+			@media (max-width: em($screen-md-rules, 16px)) {
+
+				margin: auto;
+				
+			}
+		}
+
+			.slider__content-block__header {
+
+				text-transform: uppercase;
+				color         : $white;
+
+				width         : em(240px, 24px);
+
+				line-height   : 3.1;
+				
+			}
+
+			.slider__content-block__paragraph {
+
+				width       : em(185px);
+				text-align  : left; 
+
+			}
+			
+			.slider__content-block__preview {
+
+				width           : em(75px);
+
+				font-size       : em(15px);
+				font-family     : $font-family--secondary;
+				color           : $black;
+				font-weight     : $font-weight--bold;
+
+				border-radius   : 0;
+				background      : image-url('slider/preview_bg.jpg');
+
+				@extend .btn;
+				@extend .btn-default;
+				@extend .show;
+
+			}

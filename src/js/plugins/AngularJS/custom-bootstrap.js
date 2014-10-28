@@ -3,7 +3,7 @@
 var app = angular.module('customBootstrap',['ngTouch']);
 
 app.controller('carouselCtrl',['$scope', function ($scope) {
-  	$scope.myInterval = 20000;
+  	$scope.myInterval = 10000;
 	this.slides = [
 
 		{

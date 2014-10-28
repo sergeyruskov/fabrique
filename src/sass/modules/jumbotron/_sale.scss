@@ -1,6 +1,6 @@
 .slider-and-sale {
 
-	padding-bottom  : em(20px);
+	padding-bottom  : em(30px);
  	border-bottom   : em(2px) dotted $brand-primary;
 
 	@extend .row;
@@ -11,8 +11,8 @@
 
 		padding-left: em(15px);
 
-		@extend     .col-md-3;
-		@extend     .col-sm-3;
+		@extend     .col-lg-3;
+		@extend     .hidden-md;
 
 		&__discount {
 

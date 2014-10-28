@@ -3,12 +3,17 @@
 	padding     : em(40px);
 
 	@extend     .container;
-
+	
+	@media (max-width: em($screen-md-rules, 16px)) {
+		// padding: em(40px) 0;
+		width: 100%;
+	}
 }
 
 	.copyright {
 
 		@extend .col-lg-2;
+		@extend .col-md-3;
 
 		&__header {
 
@@ -39,14 +44,19 @@
 
 		@extend .col-lg-offset-9;
 		@extend .col-lg-1;
+		@extend .col-md-offset-7;
+		@extend .col-md-2;
 
 	}
 
 		.social-networks {
 
 			border: em(2px) solid #ccc;
-
 			background: linear-gradient(#fff, rgba(180, 152, 144, 0.2));
+			@media (max-width: em($screen-md-rules,16px)) {
+				width : em(75px);
+				float : right;
+			}
 
 			&__facebook,
 			&__twitter {

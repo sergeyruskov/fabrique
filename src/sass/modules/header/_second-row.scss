@@ -7,14 +7,24 @@
 	& > li > a {
 
 		font-size: em(18px);
+		padding: 0 em(10px) 0 0 !important ;
 
-		@extend  .text-uppercase;
-
+		@extend .links-hyphenated;
+		@extend .text-uppercase;
 	}
 
 	@extend .nav;
 	@extend .navbar-nav;
 
+	@media (max-width: em($screen-md-rules, 16px)) {
+
+		width         : em(580px);
+		padding-bottom: em(20px);
+
+		float         : none;
+		margin        : auto;
+
+	}
 }
 
 
@@ -28,23 +38,36 @@ li.open>a {
 
 .form-btn-inside {
 
-	@media (max-width: em(1040px, 16px)) {
+	margin-top: 0;
+	@extend %form;
 
-		margin-left: em(20px);
-		float      : left !important;
-		
-		&__input {
-			width      : em(180px) !important;
-		}
+	@media (max-width: em($screen-md-rules, 16px)) {
+
+		width : 35%;
+		margin: auto;
+		float : none !important;
+
 	}
 
-	@extend %form;
+	.form-group {
+
+		@media (max-width: em($screen-md-rules, 16px)) {
+
+			width: 100% !important;
+
+		}
+	}
 
 	&__input {
 		
 		@extend %input;
 		@extend .form-control;
 
+		@media (max-width: em($screen-md-rules, 16px)) {
+
+			width: 100% !important;
+
+		}
 	}
 
 	&__submit-button {	

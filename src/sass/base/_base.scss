@@ -7,6 +7,12 @@ body {
 
 	@include background(image-url("bg.jpg"));
 	padding: em(65px) 0 em(40px);
+
+	@media (max-width: em($screen-md-rules, 16px)) {
+
+		padding: 0 em(40px);
+
+	}
 	
 }
 
@@ -20,8 +26,9 @@ body {
 
 	@extend .container;
 
-	@media (max-width: em(1040px, 16px)) {
-		padding: em(40px) 0 em(40px);
+	@media (max-width: em($screen-md-rules, 16px)) {
+		padding: em(40px) 0;
+		width: 100%;
 	}
 	
 }

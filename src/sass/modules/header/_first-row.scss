@@ -3,11 +3,22 @@
 
 	padding-top: $header-blocks-indent;
 
+	@media (max-width: em($screen-md-rules, 16px)) {
+		padding-top: 0;
+	}
+
 }
 
 .header__first-row {
 
 	padding-bottom: $header-blocks-indent;
+
+	@media (max-width: em($screen-md-rules, 16px)) {
+
+		width         : 80%;
+		margin        : auto;
+		padding-bottom: em(30px);
+	}
 
 	@extend       .row;
 
@@ -19,10 +30,6 @@
 
 	.logo {
 
-		@media (max-width: em(1040px, 16px)) {
-			padding-left: em(15px);
-		}
-
 		display: inline-block;
 
 		&__big-letters {
@@ -30,12 +37,19 @@
 			font  : em(45px) $font-family--secondary;
 			color : $color-third;
 
+			@media (max-width: em($screen-md-rules, 16px)) {
+				font-size: em(30px);
+			}
+
 		}
 
 		&__small-letters {
 
 			font-size     : em(25px);
 
+				@media (max-width: em($screen-md-rules, 16px)) {
+					font-size: em(16px);
+				}
 		}
 
 		&__big-letters, 
@@ -71,10 +85,16 @@
 				@extend .active-link;
 			}
 
+			@media (max-width: em($screen-md-rules, 16px)) {
+
+				display     : block;
+				text-align  : center;
+
+			}
+
 		}
 
 		@extend .col-lg-offset-1;
-		@extend .col-md-offset-1;
 		@extend .col-lg-3;
 		@extend .col-md-3;	
 
@@ -88,6 +108,11 @@
 		@extend .col-lg-2;
 		@extend .col-md-2;
 
+		@media (max-width: em($screen-md-rules, 16px)) {
+			width: em(65px);
+			text-align: center;
+		}
+
 	}
 
 // ==========================================================================
@@ -100,7 +125,14 @@
 		padding-left: em(14px);
 
 		@extend .col-lg-3;
-		@extend .col-md-3;
+		@extend .col-md-4;
+
+		@media (max-width: em($screen-md-rules, 16px)) {
+
+			height      : em(38px);
+			padding-left: 0;
+
+		}
 
 	}
 
@@ -109,6 +141,10 @@
 			position: absolute;
 			bottom: 0;
 			
+			@media (max-width: em($screen-md-rules, 16px)) {
+				position: static;
+				float: right;
+			}
 			
 			&__button {
 				
@@ -129,10 +165,16 @@
 
 			&__message {
 				
-				width   : em(169px);
+				width     : em(169px);
 				margin-top: em(-3px);
 
 				@extend .pull-left;
+
+				@media (max-width: em($screen-md-rules, 16px)) {
+
+					width      : em(75px);
+
+				}
 
 			}
 
