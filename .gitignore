@@ -1,6 +1,6 @@
 dist/images/Thumbs.db
 src/node_modules
-src/.sass-cache
+src/.sass-cache 
 
 ### Node ###
 # Logs
