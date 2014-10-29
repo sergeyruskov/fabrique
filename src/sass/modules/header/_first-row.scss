@@ -13,15 +13,14 @@
 
 	padding-bottom: $header-blocks-indent;
 
+	@extend       .row;
+
 	@media (max-width: em($screen-md-rules, 16px)) {
 
 		width         : 80%;
 		margin        : auto;
 		padding-bottom: em(30px);
 	}
-
-	@extend       .row;
-
 }
 
 // ==========================================================================
@@ -30,26 +29,9 @@
 
 	.logo {
 
-		display: inline-block;
+		@media (max-width: em($screen-sm-rules, 16px)) {
 
-		&__big-letters {
-
-			font  : em(45px) $font-family--secondary;
-			color : $color-third;
-
-			@media (max-width: em($screen-md-rules, 16px)) {
-				font-size: em(30px);
-			}
-
-		}
-
-		&__small-letters {
-
-			font-size     : em(25px);
-
-				@media (max-width: em($screen-md-rules, 16px)) {
-					font-size: em(16px);
-				}
+			padding-bottom: em(15px);
 		}
 
 		&__big-letters, 
@@ -62,8 +44,30 @@
 		@extend %hover;
 		@extend .col-lg-3;
 		@extend .col-md-3;
+		@extend .col-sm-12;
+		@media (max-width: em($screen-sm-rules, 16px)) {
+			text-align: center;
+			font-size   : 120%;
+		}
 
+		&__big-letters {
 
+			font  : em(45px) $font-family--secondary;
+			color : $color-third;
+
+			@media (max-width: em($screen-md-rules, 16px)) {
+				font-size: em(30px);
+			}
+		}
+
+		&__small-letters {
+
+			font-size     : em(25px);
+
+			@media (max-width: em($screen-md-rules, 16px)) {
+				font-size: em(16px);
+			}
+		}
 	}
 
 // ==========================================================================
@@ -72,7 +76,24 @@
 
 	.private-office {
 
-		overflow: hidden;
+		overflow    : hidden;
+
+		@extend .col-lg-offset-1;
+		@extend .col-lg-3;
+		@extend .col-md-3;
+		@media (max-width: em($screen-sm-rules, 16px)) {
+			padding-left: 25%;
+
+			@media (max-width: em($screen-sm-rules, 16px)) {
+				display       : block;
+				width         : em(160px);
+				padding-left  : 0;
+				margin        : auto;
+
+
+				padding-bottom: em(15px);
+			}
+		}
 
 		&__menu {
 
@@ -90,14 +111,18 @@
 				display     : block;
 				text-align  : center;
 
+				@media (max-width: em($screen-sm-rules, 16px)) {
+					display   : inline-block;
+					width     : 50%;
+					border    : none;
+
+					padding   : em(5px);
+
+					font-size : 120%;
+					text-align: left;
+				}
 			}
-
 		}
-
-		@extend .col-lg-offset-1;
-		@extend .col-lg-3;
-		@extend .col-md-3;	
-
 	}
 
 // ==========================================================================
@@ -109,9 +134,24 @@
 		@extend .col-md-2;
 
 		@media (max-width: em($screen-md-rules, 16px)) {
-			width: em(65px);
+			width     : em(65px);
 			text-align: center;
+
+			@media (max-width: em($screen-sm-rules, 16px)) {
+				padding-bottom: em(15px);
+				width         : em(149px);
+
+				margin        : auto;
+				display       : block;
+
+				font-size     : 120%;
+			}
 		}
+	}
+
+	.active-currency {
+
+		padding-left: em(8px);
 
 	}
 
@@ -121,7 +161,7 @@
 
 	.basket-wrapper {
 
-		height: em(72px);
+		height      : em(72px);
 		padding-left: em(14px);
 
 		@extend .col-lg-3;
@@ -131,19 +171,32 @@
 
 			height      : em(38px);
 			padding-left: 0;
-
 		}
 
-	}
+			@media (max-width: em($screen-sm-rules, 16px)) {
+				width     : em(70px);
+				height    : auto;
+				margin    : auto;
+				text-align: center;
+
+				font-size: 120%;
+			}
+		}
 
 		.basket {
 
 			position: absolute;
 			bottom: 0;
+			overflow: hidden;
 			
 			@media (max-width: em($screen-md-rules, 16px)) {
 				position: static;
 				float: right;
+
+				@media (max-width: em($screen-sm-rules, 16px)) {
+					font-size: 90%;
+					float    : none;
+				}
 			}
 			
 			&__button {
@@ -153,7 +206,9 @@
 				@extend .pull-left;
 				@extend .btn;
 				@extend .btn-default;
-
+				@media (max-width: em($screen-sm-rules, 16px)) {
+					display: none;
+				}
 			}
 
 				&__button__icon {

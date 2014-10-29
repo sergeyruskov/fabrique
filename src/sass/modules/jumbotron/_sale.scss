@@ -4,7 +4,10 @@
  	border-bottom   : em(2px) dotted $brand-primary;
 
 	@extend .row;
-
+ 	@media (max-width: em($screen-sm-rules, 16px)) {
+ 		border-bottom : 0;
+ 		padding-bottom: 0
+ 	}
 }
 
 	.sale {
@@ -13,6 +16,7 @@
 
 		@extend     .col-lg-3;
 		@extend     .hidden-md;
+		@extend     .hidden-sm;
 
 		&__discount {
 
@@ -65,17 +69,16 @@
 			&__submit-button {
 
 
-				&:focus {
-
-					@extend %button-focus;
-
-				}
-
 				@extend %button;
 			 	@extend .btn;
 			 	@extend .btn-xs;
 			 	@extend .btn-default;
 
+				&:focus {
+
+					@extend %button-focus;
+
+				}
 			}
 		}
 

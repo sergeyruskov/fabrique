@@ -13,11 +13,20 @@
 
 		@extend .col-lg-3;
 		@extend .col-md-6;
+		@media (max-width: em($screen-sm-rules, 16px)) {
+			font-size  : 120%;
+		}
 
 		@media (max-width: em($screen-md-rules, 16px)) {
-			border: 0;
+			border    : 0;
 			text-align: center;
-			height  : em(176px) !important;
+			height    : em(176px) !important;
+			@media (max-width: em($screen-sm-rules, 16px)) {
+
+				padding-bottom: em(15px);
+				text-align    : center;
+				height        : auto !important;
+			}
 		}
 
 	}
@@ -26,8 +35,18 @@
 	.footer__element--your-account {
 		border-left : em(2px) dotted $brand-primary;
 		padding-left: em(20px);
+		@media (max-width: em($screen-sm-rules, 16px)) {
+			padding: 0 em(10px) em(10px);
+		}
 
 		@extend .footer__element--information;
+	}
+
+	.footer__element--your-account {
+		@media (max-width: em($screen-sm-rules, 16px)) {
+			border     : 0;
+			border-top : em(2px) dotted $brand-primary;
+		}
 	}
 
 	.footer__element--contacts {
@@ -42,14 +61,14 @@
 	.footer__element--border--free-deliver {
 
 
-		padding       : em(10px) 0 em(38px);
 		position      : relative;
 
 		@extend .footer__element--your-account;
 
 		
 		@media (max-width: em($screen-md-rules, 16px)) {
-			border-top : em(2px) dotted $brand-primary;
+			border-top    : em(2px) dotted $brand-primary;
+			padding       : em(10px) 0 em(38px);
 		}
 	}
 
@@ -58,6 +77,9 @@
 			line-height   : 1;
 			padding-bottom: em(10px);
 
+			@media (max-width: em($screen-md-rules, 16px)) {
+				padding: em(5px) 0 em(5px);
+			}
 		}
 
 		.footer__contacts-paragraph {
@@ -65,8 +87,14 @@
 			width         : em(185px);
 
 			padding-bottom: em(15px);
-			margin        : auto;
 
+			@media (max-width: em($screen-md-rules, 16px)) {
+				margin    : auto;
+
+				@media (max-width: em($screen-sm-rules, 16px)) {
+					width: auto;
+				}
+			}
 		}
 
 		.big-header {
@@ -101,7 +129,7 @@
 			
 			%payment-system {
 
-				width  		: em(42px);
+				width  		: em(42px, 17px);
 				height 		: em(27px);
 				margin-left : em(10px);
 

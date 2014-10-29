@@ -29,8 +29,11 @@ body {
 	@media (max-width: em($screen-md-rules, 16px)) {
 		padding: em(40px) 0;
 		width: 100%;
+		
+		@media (max-width: em($screen-sm-rules, 16px)) {
+			padding-top: 0;
+		}
 	}
-	
 }
 
 .content,

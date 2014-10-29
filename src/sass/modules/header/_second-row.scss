@@ -1,31 +1,48 @@
 // ==========================================================================
 // Main navigation menu
 // ==========================================================================
-
-.navigation-menu {
-
-	& > li > a {
-
-		font-size: em(18px);
-		padding: 0 em(10px) 0 0 !important ;
-
-		@extend .links-hyphenated;
-		@extend .text-uppercase;
-	}
-
-	@extend .nav;
-	@extend .navbar-nav;
-
-	@media (max-width: em($screen-md-rules, 16px)) {
-
-		width         : em(580px);
-		padding-bottom: em(20px);
-
-		float         : none;
-		margin        : auto;
-
-	}
+.navbar-default {
+	height: auto !important;
 }
+
+	.navbar-toggle {
+		@media (max-width: em($screen-sm-rules, 16px)) {
+			margin : auto;
+			float  : none;
+			display: block;
+		}
+	}
+
+	.navigation-menu {
+
+		& > li > a {
+
+			font-size: em(18px);
+			padding  : 0 em(10px) 0 0 !important ;
+
+			@extend .links-hyphenated;
+			@extend .text-uppercase;
+			@media (max-width: em($screen-sm-rules, 14px)) {
+
+				width  : 90%;
+				margin : auto;
+				padding: em(5px) 0 !important;
+			}
+		}
+
+		@extend .nav;
+		@extend .navbar-nav;
+
+		@media (max-width: em($screen-md-rules, 16px)) {
+
+			width         : em(580px);
+			padding-bottom: em(20px);
+
+			float         : none;
+			margin        : auto;
+
+		}
+	}
 
 
 li.open>a {
@@ -39,7 +56,6 @@ li.open>a {
 .form-btn-inside {
 
 	margin-top: 0;
-	@extend %form;
 
 	@media (max-width: em($screen-md-rules, 16px)) {
 
@@ -47,16 +63,19 @@ li.open>a {
 		margin: auto;
 		float : none !important;
 
-	}
+		@media (max-width: em($screen-sm-rules, 16px)) {
 
-	.form-group {
-
-		@media (max-width: em($screen-md-rules, 16px)) {
-
-			width: 100% !important;
+			width : 90%;
+			margin: auto
 
 		}
 	}
+
+
+	@extend %form;
+	@extend .navbar-form;
+	@extend .pull-right;
+
 
 	&__input {
 		
@@ -70,7 +89,7 @@ li.open>a {
 		}
 	}
 
-	&__submit-button {	
+	&__submit-button {
 
 		@extend %button;
 		@extend .btn;
@@ -83,6 +102,12 @@ li.open>a {
 
 		}
 
+		@media (max-width: em($screen-sm-rules, 16px)) {
+
+			right: 0;
+			left : em(143px,10px);
+			top  : em(18px);
+		}
 	}
 
 		&__icon {
@@ -93,9 +118,15 @@ li.open>a {
 			@extend      .glyphicon-search;
 	
 		}
-
-	@extend          .navbar-form;
-	@extend          .pull-right;
-
 }
-	
+
+		.form-group {
+
+			@media (max-width: em($screen-md-rules, 16px)) {
+				width: 100% !important;
+			}
+
+			@media (max-width: em($screen-sm-rules, 16px)) {
+				width: em(170px) !important;
+			}
+		}

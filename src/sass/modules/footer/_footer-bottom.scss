@@ -5,8 +5,10 @@
 	@extend     .container;
 	
 	@media (max-width: em($screen-md-rules, 16px)) {
-		// padding: em(40px) 0;
 		width: 100%;
+		@media (max-width: em($screen-sm-rules,16px)) {
+			padding: 0;
+		}
 	}
 }
 
@@ -15,9 +17,17 @@
 		@extend .col-lg-2;
 		@extend .col-md-3;
 
+
+		@media (max-width: em($screen-sm-rules,16px)) {
+			margin     : auto;
+			width      : 50%;
+
+			padding-bottom: em(10px);
+			text-align    : center;
+		}
+
 		&__header {
 
-			margin     : 0;
 
 			&__link {
 
@@ -56,6 +66,12 @@
 			@media (max-width: em($screen-md-rules,16px)) {
 				width : em(75px);
 				float : right;
+
+				@media (max-width: em($screen-sm-rules,16px)) {
+					display: block;
+					margin : auto;
+					float  : none;
+				}
 			}
 
 			&__facebook,
