@@ -1,4 +1,4 @@
-Fabrique Fine Furnishings
+					Fabrique Fine Furnishings
 =========================
 
 											Кратко о проекте
@@ -13,5 +13,5 @@ Fabrique Fine Furnishings
 
 											Ссылки
 
-Ссылка на ТЗ: http://htmlforum.ru/index.php?s=57963c3a6d84d6a532e8f46eb980f46a&amp;showtopic=47141
-Сайт на хостинге: http://www.tech-drive.ru/sergey/fabrique/
+<a href="http://htmlforum.ru/index.php?s=57963c3a6d84d6a532e8f46eb980f46a&amp;showtopic=47141">Ссылка на ТЗ</a>
+<a href="http://www.tech-drive.ru/sergey/fabrique/">Сайт на хостинге</a>
