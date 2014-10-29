@@ -3,7 +3,7 @@ Fabrique Fine Furnishings
 
 										Кратко о проекте
 
-При выполнении этого проекта были использованы: SCSS, Compass, Source map, Bootstrap, BEM, Gulp, JSON, Javascript, CSS3, HTML5, Boilerplate, Photoshop, SMACSS(часть управления структурой проекта).
+При выполнении этого проекта были использованы: SCSS, Compass, Source map, Bootstrap, Responsive Web Design, BEM, Gulp, JSON, Javascript, CSS3, HTML5, Boilerplate, Photoshop, SMACSS(часть управления структурой проекта).
 
 Отдельно хочу отметить, то что весь проект написан на AngularJS (без использования Bootstrap.js, jQuery и т.д.). Через контроллеры дописана реакция на переключения валют, добавление товара в корзину и валидация формы email. Добавлять товары на сайт можно просто дописывая их в JSON файл.
 
