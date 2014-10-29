@@ -23,11 +23,11 @@ app.controller('activeCurrencyCtrl',["$rootScope", function ($rootScope) {
 app.controller('activeMainMenuCtrl',function () {
 	this.selectItem = 1;
 
-    this.setTrigger = function(activeCurrency){
+	this.setTrigger = function(activeCurrency){
 		this.selectItem = activeCurrency;
 	};
 
-    this.activeClass = function(activeClass){
+	this.activeClass = function(activeClass){
 		return this.selectItem === activeClass;
 	};
 });
@@ -56,6 +56,5 @@ app.controller('emailValidationCtrl', function(){
 	this.emailSubmit = function  (emailValidBoolean){
 		emailValidBoolean = alert("I'll remember");
 	};
-
 });
 })();

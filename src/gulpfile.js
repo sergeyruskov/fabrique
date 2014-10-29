@@ -1,4 +1,3 @@
-require('newrelic');
 var compass = require('gulp-compass'),
     livereload = require('gulp-livereload'),
 	autoprefixer = require('gulp-autoprefixer'),
@@ -10,14 +9,19 @@ var compass = require('gulp-compass'),
     plumber = require('gulp-plumber'),
     distPath = '../dist/',
     rename = require('gulp-rename'),
-    wordEnd = ".min";
+    jsonminify = require('gulp-jsonminify'),
+    wordEnd = ".min",
+    streamqueue  = require('streamqueue');
 
 
-gulp.task('default', ['fonts', 'json', 'favicon', 'imagemin', 'compass', 'minifyHtml','scripts', 'watch']);
+gulp.task('default', ['fonts', 'json-minify', 'favicon', 'imagemin', 'compass', 'minifyHtml','scripts', 'watch']);
 
 //JS
 gulp.task('scripts', function () {
-    gulp.src('js/**/**/*.js')
+    return streamqueue({ objectMode: true },
+        gulp.src('js/**/angular.js'),
+        gulp.src('js/**/angularjs/*.js')
+    )
         .pipe(plumber()) 
         .pipe(concat('script.js'))
         .pipe(uglify()) 
@@ -43,9 +47,7 @@ gulp.task('compass',  function () {
     gulp.src('sass/fabrique.min.scss')
         .pipe(plumber()) 
         .pipe(compass({
-            config_file: 'config.rb',
-            css: '../dist/css/',
-            sourcemap: true
+            config_file: 'config.rb'
         }))
         .pipe(autoprefixer({
             browsers: ['> 1%'],
@@ -78,10 +80,10 @@ gulp.task('favicon', function () {
 });
 
 //Move json
-gulp.task('json', function () {
-    gulp.src("js/plugins/angularjs/database.json")
-    .pipe(rename(function (path) {}))
-    .pipe(gulp.dest(distPath + 'js'));
+gulp.task('json-minify', function () {
+    return gulp.src(['js/plugins/angularjs/database.json'])
+        .pipe(jsonminify())
+        .pipe(gulp.dest('../dist/js'));
 });
 
 

@@ -15,6 +15,22 @@
 
 	.navigation-menu {
 
+		@extend .nav;
+		@extend .navbar-nav;
+		@media (max-width: em($screen-md-rules, 16px)) {
+
+			width         : em(580px);
+			padding-bottom: em(20px);
+
+			float         : none;
+			margin        : auto;
+			@media (max-width: em($screen-sm-rules, 16px)) {
+
+				width         : auto;
+				padding-bottom: 0;
+			}
+		}
+
 		& > li > a {
 
 			font-size: em(18px);
@@ -26,21 +42,12 @@
 
 				width  : 90%;
 				margin : auto;
-				padding: em(5px) 0 !important;
+				padding: em(5px) em(5px) em(5px) !important;
+				@media (max-width: em($screen-sm-rules, 14px)) {
+
+					width  : 100%;
+				}
 			}
-		}
-
-		@extend .nav;
-		@extend .navbar-nav;
-
-		@media (max-width: em($screen-md-rules, 16px)) {
-
-			width         : em(580px);
-			padding-bottom: em(20px);
-
-			float         : none;
-			margin        : auto;
-
 		}
 	}
 
@@ -65,9 +72,8 @@ li.open>a {
 
 		@media (max-width: em($screen-sm-rules, 16px)) {
 
-			width : 90%;
-			margin: auto
-
+			margin: auto;
+			width : 80%;
 		}
 	}
 
@@ -78,14 +84,17 @@ li.open>a {
 
 
 	&__input {
-		
+
 		@extend %input;
 		@extend .form-control;
 
 		@media (max-width: em($screen-md-rules, 16px)) {
 
 			width: 100% !important;
+			@media (max-width: em($screen-sm-rules, 16px)) {
 
+				height: auto;
+			}
 		}
 	}
 
@@ -99,14 +108,15 @@ li.open>a {
 		&:focus {
 
 			@extend %button-focus;
-
 		}
 
 		@media (max-width: em($screen-sm-rules, 16px)) {
 
-			right: 0;
-			left : em(143px,10px);
-			top  : em(18px);
+			right : em(6px, 14px);
+			top   : em(21px, 14px);
+
+			width : em(34px, 14px);
+			height: em(34px, 14px);
 		}
 	}
 
@@ -124,9 +134,5 @@ li.open>a {
 
 			@media (max-width: em($screen-md-rules, 16px)) {
 				width: 100% !important;
-			}
-
-			@media (max-width: em($screen-sm-rules, 16px)) {
-				width: em(170px) !important;
 			}
 		}

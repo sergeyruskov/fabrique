@@ -71,10 +71,6 @@ $header-blocks-indent    : 3.5714285714285716em;
 
 // ==========================================================================
 
-// $screen-size            : 760em;
-// $screen-xs              : $screen-size;
-// $screen-xs-min          : $screen-size;
-$container-tablet       : 313px;
 $screen-sm-rules        : 767px;
 
 $screen-md              : 768px;
@@ -83,4 +79,4 @@ $screen-md-rules        : 1040px;
 $screen-lg              : 1040px;
 
 // Point at which the navbar begins collapsing.
-$grid-float-breakpoint: 767px;
+$grid-float-breakpoint: 768px;

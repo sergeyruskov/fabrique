@@ -5,8 +5,7 @@
 
 	@extend .row;
  	@media (max-width: em($screen-sm-rules, 16px)) {
- 		border-bottom : 0;
- 		padding-bottom: 0
+ 		display: none;
  	}
 }
 

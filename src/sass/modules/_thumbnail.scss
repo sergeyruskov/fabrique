@@ -25,13 +25,12 @@
 		@media (max-width: em($screen-md-rules, 16px)) {
 
 			text-align    : center;
-			padding-bottom: em(20px);
+			padding-bottom: em(20px,24px) !important;
 
 			@media (max-width: em($screen-sm-rules, 16px)) {
-				padding: em(10px) 0 em(20px);
+				padding: em(10px, 24px) 0 0 !important;
 			}
 		}
-
 	}
 		
 		.thumbnail-wrapper-product {
@@ -120,12 +119,15 @@
 
 							line-height   : 1;
 							display       : block;
-							max-width     : em(220px - 52px); //thumbnai:width-thumbnail__product-name-and-price__links--price:width
+							max-width     : em(220px - 55px); //thumbnai:width-thumbnail__product-name-and-price__links--price:width
 
 							@extend .pull-left;
 							@media (max-width: em($screen-md-rules, 16px)) {
 								max-width     : none;
 								float         : none !important;
+
+								height        : 14px !important;
+								overflow      : hidden;
 								text-align    : center;
 							}
 						}
@@ -133,7 +135,7 @@
 						.thumbnail__product-name-and-price__links--price {
 
 							display    : block;
-							width      : em(52px);
+							width      : em(55px);
 
 							@media (max-width: em($screen-md-rules, 16px)) {
 								width     : 100%;
@@ -168,12 +170,15 @@
 
 						@media (max-width: em($screen-md-rules, 16px)) {
 
-							width : 80%;
+							width        : 80%;
+							height       : em(64px) !important;
+
 							margin: auto;
 
-							@media (max-width: em($screen-md-rules, 16px)) {
+							@media (max-width: em($screen-sm-rules, 16px)) {
 								margin-bottom: 0;
-								height       : auto;
+								height       : auto !important;
+								padding-bottom: em(10px);
 							}
 						}
 					}

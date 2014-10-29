@@ -129,19 +129,19 @@
 			
 			%payment-system {
 
-				width  		: em(42px, 17px);
-				height 		: em(27px);
-				margin-left : em(10px);
+				width  		: 43px;
+				height 		: 27px;
+				margin-left : em(5px);
 
 				display: inline-block;
 			}
 
 			.payment-system--paypal {
 
+				@extend %payment-system;
 				margin-left: 0 !important;
 
 				@extend .my-icons-paypal;
-				@extend %payment-system;
 			}
 
 			.payment-system--visa {

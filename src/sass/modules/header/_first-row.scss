@@ -32,6 +32,7 @@
 		@media (max-width: em($screen-sm-rules, 16px)) {
 
 			padding-bottom: em(15px);
+			display       : block;
 		}
 
 		&__big-letters, 
@@ -44,7 +45,6 @@
 		@extend %hover;
 		@extend .col-lg-3;
 		@extend .col-md-3;
-		@extend .col-sm-12;
 		@media (max-width: em($screen-sm-rules, 16px)) {
 			text-align: center;
 			font-size   : 120%;
