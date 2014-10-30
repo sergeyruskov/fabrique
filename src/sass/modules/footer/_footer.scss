@@ -65,7 +65,6 @@
 
 		@extend .footer__element--your-account;
 
-		
 		@media (max-width: em($screen-md-rules, 16px)) {
 			border-top    : em(2px) dotted $brand-primary;
 			padding       : em(10px) 0 em(38px);
@@ -76,9 +75,10 @@
 
 			line-height   : 1;
 			padding-bottom: em(10px);
+			margin        : 0;
 
 			@media (max-width: em($screen-md-rules, 16px)) {
-				padding: em(5px) 0 em(5px);
+				padding: em(5px) 0 em(5px) !important;
 			}
 		}
 

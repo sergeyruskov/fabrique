@@ -15,17 +15,16 @@
 	@extend .row;
 }
 
-	.important-info {
+	.important-info--product {
 
-		line-height: 2.95;
-		margin     : 0;
-		font-size: em(24px);
-		font-family: $font-family--secondary;
+		margin        : 0;
+		padding-bottom: em(15px, 24px);
 
 		@media (max-width: em($screen-md-rules, 16px)) {
 
 			text-align    : center;
-			padding-bottom: em(20px,24px) !important;
+			line-height   : 1;
+			padding-bottom: em(10px);
 
 			@media (max-width: em($screen-sm-rules, 16px)) {
 				padding: em(10px, 24px) 0 0 !important;
@@ -41,9 +40,11 @@
 			@media (max-width: em($screen-md-rules, 16px)) {
 
 				padding-bottom: em(50px);
+				height        : em(354px) !important;
 
 				@media (max-width: em($screen-sm-rules, 16px)) {
 					padding: em(20px);
+					height : auto !important;
 				}
 			}
 		}
@@ -62,7 +63,6 @@
 				@media (max-width: em($screen-md-rules, 16px)) {
 
 					width        : auto;
-					max-height   : em(340px) !important;
 					@media (max-width: em($screen-sm-rules, 16px)) {
 
 						max-width : em(400px, 14px);
@@ -70,19 +70,23 @@
 						height    : auto !important;
 					}
 				}
+
+				&>a {
+					@extend     .show;
+				}
 			}
 
-				.thumbnail__img {
+				.thumbnail a>img {
 
-					height      : em(130px);
 					margin      : 0;
-
-					@extend     .img-responsive;
+					width       : 100%;
+					height      : em(130px);
 
 					@media (max-width: em($screen-md-rules, 16px)) {
 
-						width : 80% !important;
-						height: 60% !important;
+						width : 80%;
+						margin: auto;
+						height: em(157px);
 					}
 				}
 
@@ -126,7 +130,8 @@
 								max-width     : none;
 								float         : none !important;
 
-								height        : 14px !important;
+								height        : 18px !important;
+								line-height   : 1.5;
 								overflow      : hidden;
 								text-align    : center;
 							}
@@ -171,7 +176,7 @@
 						@media (max-width: em($screen-md-rules, 16px)) {
 
 							width        : 80%;
-							height       : em(64px) !important;
+							height       : em(80px) !important;
 
 							margin: auto;
 

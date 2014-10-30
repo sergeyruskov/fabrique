@@ -8,11 +8,11 @@
     "gulp-concat": "latest",
     "gulp-imagemin": "latest",
     "gulp-jsonminify": "latest",
-    "gulp-livereload": "latest",
     "gulp-minify-html": "latest",
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
     "gulp-uglify": "latest",
+    "gulp-webserver": "latest",
     "newrelic": "latest",
     "streamqueue": "latest"
   }

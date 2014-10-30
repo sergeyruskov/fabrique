@@ -34,7 +34,7 @@
 		& > li > a {
 
 			font-size: em(18px);
-			padding  : 0 em(10px) 0 0 !important ;
+			padding  : em(8px,18px) em(10px) 0 0;
 
 			@extend .links-hyphenated;
 			@extend .text-uppercase;
@@ -42,10 +42,10 @@
 
 				width  : 90%;
 				margin : auto;
-				padding: em(5px) em(5px) em(5px) !important;
+				padding: em(5px) em(5px) em(5px);
 				@media (max-width: em($screen-sm-rules, 14px)) {
 
-					width  : 100%;
+					width: 100%;
 				}
 			}
 		}
@@ -85,8 +85,8 @@ li.open>a {
 
 	&__input {
 
-		@extend %input;
 		@extend .form-control;
+		@extend %input;
 
 		@media (max-width: em($screen-md-rules, 16px)) {
 
@@ -113,10 +113,7 @@ li.open>a {
 		@media (max-width: em($screen-sm-rules, 16px)) {
 
 			right : em(6px, 14px);
-			top   : em(21px, 14px);
-
-			width : em(34px, 14px);
-			height: em(34px, 14px);
+			top   : em(18px, 14px);
 		}
 	}
 
